@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bankrot Analytics | Умный анализ торгов по банкротству</title>
+    <meta name="description"
+        content="Автоматизированный сервис для анализа лотов и торгов по банкротству. Найдите самые выгодные предложения с помощью AI.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/assets.css">
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">B</span>
+                <span class="logo-text">Bankrot<span class="highlight">Analytics</span></span>
+            </a>
+            <nav class="nav">
+                <a href="#status" class="nav-link">Статус дела</a>
+                <a href="#property" class="nav-link">Имущество</a>
+                <a href="#auctions" class="nav-link">Торги</a>
+                <a href="#creditors" class="nav-link">Кредиторы</a>
+                <a href="#chronology" class="nav-link">Хронология</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="start">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        AI-аналитика торгов 2.0
+                    </div>
+                    <h1 class="hero-title">
+                        Полная картина дела о банкротстве <span class="text-gradient">за 1 клик</span>
+                    </h1>
+                    <p class="hero-description">
+                        Превращаем тысячи страниц судебных документов и сообщений с Федресурса в понятный аналитический
+                        отчет. Оценивайте риски и находите ликвидные лоты мгновенно.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#demo" class="btn btn-primary btn-lg">Смотреть пример отчета</a>
+                    </div>
+
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">⚡ 10 мин</span>
+                            <span class="stat-label">Генерация отчета</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-value">📱 Telegram</span>
+                            <span class="stat-label">Уведомления</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-value">🤖 ИИ-ассистент</span>
+                            <span class="stat-label">Скоро</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <!-- Abstract representation of the report dashboard -->
+                    <div class="glass-card card-dashboard">
+                        <div class="dashboard-header">
+                            <div class="dash-title">Дело А32-54577/2023</div>
+                            <div class="dash-badge">Конкурсное производство</div>
+                        </div>
+                        <div class="dashboard-grid">
+                            <div class="dash-stat">
+                                <div class="dash-label">Активные дела</div>
+                                <div class="dash-value">58</div>
+                                <div class="dash-chart-circle"></div>
+                            </div>
+                            <div class="dash-stat">
+                                <div class="dash-label">Реализовано</div>
+                                <div class="dash-value">30.5 млн ₽</div>
+                                <div class="dash-progress">
+                                    <div class="dash-bar" style="width: 60%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dashboard-list">
+                            <div class="list-item">
+                                <div class="item-icon">⚖️</div>
+                                <div class="item-text">Суд: АС Краснодарского края</div>
+                            </div>
+                            <div class="list-item">
+                                <div class="item-icon">💼</div>
+                                <div class="item-text">АУ: Гейко Андрей Викторович</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating elements -->
+                    <div class="glass-card card-floating card-floating-1">
+                        <div class="check-circle">✓</div>
+                        <span>Отчет сформирован</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 1: Status & General Stats -->
+        <section class="feature-section" id="status">
+            <div class="container">
+                <div class="feature-header-centered">
+                    <div class="feature-title-wrapper">
+                        <div class="feature-icon">📊</div>
+                        <h2 class="feature-title">Мгновенная оценка <span class="text-gradient">статуса дела</span></h2>
+                    </div>
+                    <p class="feature-description">
+                        Больше не нужно собирать данные по крупицам. <br> Получайте всю информацию о должнике,
+                        арбитражном управляющем и ходе процедуры на одном экране.
+                    </p>
+                </div>
+                <div class="feature-container">
+                    <div class="feature-content">
+                        <ul class="feature-list">
+                            <li>
+                                <span class="list-icon">👤</span>
+                                <span><strong>Профиль должника:</strong> ИНН, СНИЛС, категория.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">⚖️</span>
+                                <span><strong>Процедура:</strong> Актуальная стадия банкротства.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">🏛️</span>
+                                <span><strong>Суд:</strong> Информация о суде.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">💼</span>
+                                <span><strong>Арбитражный управляющий:</strong> Контакты, ИНН, СРО, диаграммы активных и
+                                    завершенных дел.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">📊</span>
+                                <span><strong>История дел АУ:</strong> Диаграммы активных и завершенных дел.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">🔢</span>
+                                <span><strong>Счетчики данных:</strong> Количество объектов имущества, лотов, кредиторов
+                                    и событий.</span>
+                            </li>
+                        </ul>
+                        <a href="https://app.bankrot-analytics.ru/register" class="btn btn-primary btn-lg" style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
+                    </div>
+                    <div class="feature-visual">
+                        <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
+                            <img src="img/status_full_screenshot.png" alt="Полная информация о статусе дела"
+                                class="screenshot-img-single">
+                        </div>
+                        <!-- Floating notification -->
+                        <div class="glass-card card-floating card-floating-status">
+                            <span>⚡</span>
+                            <span>Быстрая оценка</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Feature 1.5: Assets (Inventory) -->
+        <section class="feature-section feature-reversed" id="property">
+            <div class="container">
+                <div class="feature-header-centered">
+                    <div class="feature-title-wrapper">
+                        <div class="feature-icon">🏢</div>
+                        <h2 class="feature-title">Полная инвентаризация <span class="text-gradient">имущества</span></h2>
+                    </div>
+                    <p class="feature-description">
+                        Получите детальный список всех активов должника. <br> Мы извлекаем данные из инвентаризационных
+                        описей и структурируем их по категориям.
+                    </p>
+                </div>
+                <div class="feature-container">
+                    <div class="feature-content">
+                        <ul class="feature-list">
+                            <li>
+                                <span class="list-icon">🏢</span>
+                                <span><strong>Все категории:</strong> Недвижимость, транспорт, оборудование, дебиторская
+                                    задолженность.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">📋</span>
+                                <span><strong>Детализация:</strong> Площадь, кадастровые номера, адреса и
+                                    характеристики.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">✅</span>
+                                <span><strong>Статус:</strong> Видно, что уже продано, а что еще доступно.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">💰</span>
+                                <span><strong>Цены реализации:</strong> Для каждого проданного объекта указана
+                                    фактическая
+                                    цена продажи.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">📊</span>
+                                <span><strong>Сводная статистика:</strong> Общая сумма реализованного имущества и
+                                    количество
+                                    проданных лотов на одном экране.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">📄</span>
+                                <span><strong>Развернутые карточки:</strong> Подробное описание каждого объекта с
+                                    полными реквизитами.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">🔗</span>
+                                <span><strong>Ссылки на торги:</strong> Прямые ссылки на объявления и результаты
+                                    торгов.</span>
+                            </li>
+                        </ul>
+                        <a href="https://app.bankrot-analytics.ru/register" class="btn btn-primary btn-lg" style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
+                    </div>
+                    <div class="feature-visual">
+                        <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
+                            <img src="img/property_full_screenshot.png" alt="Полная инвентаризация имущества должника"
+                                class="screenshot-img-single">
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Feature 2: Auctions & Lots -->
+        <section class="feature-section" id="auctions">
+            <div class="container">
+                <div class="feature-header-centered">
+                    <div class="feature-title-wrapper">
+                        <div class="feature-icon">🔨</div>
+                        <h2 class="feature-title">Умный анализ <span class="text-gradient">торгов и лотов</span></h2>
+                    </div>
+                    <p class="feature-description">
+                        Визуализируем динамику изменения цены. <br>
+                        Подсвечиваем самые выгодные этапы публичного предложения. <br>
+                        Вы увидите реальную выгоду в рублях.
+                    </p>
+                </div>
+                <div class="feature-container">
+                    <div class="feature-content">
+                        <ul class="feature-list">
+                            <li>
+                                <span class="list-icon">🔍</span>
+                                <span><strong>Фильтры по статусу:</strong> Все, объявлены, прием заявок, завершенные, не
+                                    состоялись.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">📋</span>
+                                <span><strong>Детальные карточки:</strong> Дата, тип торгов, количество лотов, общая
+                                    сумма.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">📈</span>
+                                <span><strong>Динамика цены:</strong> Визуализация падения от начальной до текущей цены
+                                    с процентами.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">🏆</span>
+                                <span><strong>Информация о победителе:</strong> ИНН и имя покупателя для завершенных
+                                    торгов.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">🔗</span>
+                                <span><strong>Ссылки на площадки:</strong> Прямые ссылки на Федресурс и торговые
+                                    площадки.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">📝</span>
+                                <span><strong>Развернутые детали:</strong> Даты приема заявок, результатов, площадка
+                                    проведения.</span>
+                            </li>
+                        </ul>
+                        <a href="https://app.bankrot-analytics.ru/register" class="btn btn-primary btn-lg" style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
+                    </div>
+                    <div class="feature-visual">
+                        <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
+                            <img src="img/auctions_full_screenshot.png" alt="Полный список торгов и лотов"
+                                class="screenshot-img-single">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 3: Creditors -->
+        <section class="feature-section feature-reversed" id="creditors">
+            <div class="container">
+                <div class="feature-header-centered">
+                    <div class="feature-title-wrapper">
+                        <div class="feature-icon">👥</div>
+                        <h2 class="feature-title">Полный реестр <span class="text-gradient">кредиторов</span></h2>
+                    </div>
+                    <p class="feature-description">
+                        Понимайте расстановку сил в процедуре банкротства. <br> Мы показываем, кто и сколько требует, в
+                        удобном списке.
+                    </p>
+                </div>
+                <div class="feature-container">
+                    <div class="feature-content">
+                        <ul class="feature-list">
+                            <li>
+                                <span class="list-icon">📊</span>
+                                <span><strong>Ранжирование:</strong> Сортировка по сумме долга.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">📋</span>
+                                <span><strong>Детализация:</strong> Основной долг, штрафы, статус признания.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">🏦</span>
+                                <span><strong>ФНС и Банки:</strong> Быстро находим ключевых игроков.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">📄</span>
+                                <span><strong>Развернутые карточки:</strong> Подробные требования с суммами и
+                                    очередью.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">📑</span>
+                                <span><strong>Несколько требований:</strong> Один кредитор может иметь несколько
+                                    требований.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">💰</span>
+                                <span><strong>Общая сумма:</strong> Видна итоговая сумма задолженности по каждому
+                                    кредитору.</span>
+                            </li>
+                        </ul>
+                        <a href="https://app.bankrot-analytics.ru/register" class="btn btn-primary btn-lg" style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
+                    </div>
+                    <div class="feature-visual">
+                        <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
+                            <img src="img/creditors_full_screenshot.png" alt="Полный реестр кредиторов"
+                                class="screenshot-img-single">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 4: Chronology -->
+        <section class="feature-section" id="chronology">
+            <div class="container">
+                <div class="feature-header-centered">
+                    <div class="feature-title-wrapper">
+                        <div class="feature-icon">📅</div>
+                        <h2 class="feature-title">Хронология <span class="text-gradient">событий</span></h2>
+                    </div>
+                    <p class="feature-description">
+                        Ни одно судебное определение или сообщение АУ не ускользнет от вас. <br>
+                        Вся история дела в единой ленте событий.
+                    </p>
+                </div>
+                <div class="feature-container">
+                    <div class="feature-content">
+                        <ul class="feature-list">
+                            <li>
+                                <span class="list-icon">📜</span>
+                                <span><strong>Единая лента:</strong> Объединяем данные КАД и ЕФРСБ.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">🔍</span>
+                                <span><strong>Фильтры:</strong> Быстро переключайтесь между сообщениями, документами и
+                                    торгами.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">📝</span>
+                                <span><strong>Краткое содержание:</strong> Автоматически генерируем краткое содержание
+                                    для сообщений и документов.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">🔗</span>
+                                <span><strong>Контекст:</strong> Ссылки на оригиналы документов всегда под рукой.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">📅</span>
+                                <span><strong>Типы событий:</strong> Объявления торгов, определения суда,
+                                    сообщения.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">📄</span>
+                                <span><strong>Развернутые карточки:</strong> Краткое содержание и полный текст
+                                    документа.</span>
+                            </li>
+                            <li>
+                                <span class="list-icon">🔢</span>
+                                <span><strong>Счетчики:</strong> Все события (174), документы (134), сообщения
+                                    (40).</span>
+                            </li>
+                        </ul>
+                        <a href="https://app.bankrot-analytics.ru/register" class="btn btn-primary btn-lg" style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
+                    </div>
+                    <div class="feature-visual">
+                        <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
+                            <img src="img/chronology_full_screenshot.png" alt="Полная хронология событий"
+                                class="screenshot-img-single">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reports Showcase Section -->
+        <section class="reports-section" id="demo">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Примеры <span class="text-gradient">отчетов</span></h2>
+                    <p class="section-description">
+                        Посмотрите, как выглядят готовые отчеты по реальным делам о банкротстве
+                    </p>
+                </div>
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn carousel-btn-prev" aria-label="Предыдущий слайд">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <div class="report-card" data-report="reports/case_32-545772023.html">
+                                <h3 class="report-title">Дело №А32-54577/2023</h3>
+                                <p class="report-description">ООО "СЗ СК ГРАНЬ" <br> Конкурсное производство</p>
+                                <div class="report-stats">
+                                    <span>17 лотов</span>
+                                    <span>23 кредитора</span>
+                                    <span>40 сообщений</span>
+                                    <span>134 документа</span>
+                                </div>
+                                <button class="btn btn-outline">Посмотреть отчет</button>
+                            </div>
+                            <div class="report-card" data-report="reports/case_41-24562019.html">
+                                <h3 class="report-title">Дело №А41-24562/2019</h3>
+                                <p class="report-description">Полный отчет с анализом имущества и торгов</p>
+                                <div class="report-stats">
+                                    <span>Имущество</span>
+                                    <span>Торги</span>
+                                    <span>Кредиторы</span>
+                                </div>
+                                <button class="btn btn-outline">Посмотреть отчет</button>
+                            </div>
+                            <div class="report-card" data-report="reports/case_28-43962016.html">
+                                <h3 class="report-title">Дело №А28-4396/2016</h3>
+                                <p class="report-description">Детальный анализ процедуры банкротства</p>
+                                <div class="report-stats">
+                                    <span>Статус</span>
+                                    <span>Хронология</span>
+                                    <span>Документы</span>
+                                </div>
+                                <button class="btn btn-outline">Посмотреть отчет</button>
+                            </div>
+                            <div class="report-card" data-report="reports/case_55-199792024.html">
+                                <h3 class="report-title">Дело №А55-19979/2024</h3>
+                                <p class="report-description">Актуальная информация по делу</p>
+                                <div class="report-stats">
+                                    <span>Свежие данные</span>
+                                    <span>2024 год</span>
+                                </div>
+                                <button class="btn btn-outline">Посмотреть отчет</button>
+                            </div>
+                            <div class="report-card" data-report="reports/case_60-536922023.html">
+                                <h3 class="report-title">Дело №А60-53692/2023</h3>
+                                <p class="report-description">Комплексный отчет о процедуре</p>
+                                <div class="report-stats">
+                                    <span>Полные данные</span>
+                                    <span>2023 год</span>
+                                </div>
+                                <button class="btn btn-outline">Посмотреть отчет</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn carousel-btn-next" aria-label="Следующий слайд">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-dots">
+                        <button class="carousel-dot active" aria-label="Слайд 1"></button>
+                        <button class="carousel-dot" aria-label="Слайд 2"></button>
+                        <button class="carousel-dot" aria-label="Слайд 3"></button>
+                        <button class="carousel-dot" aria-label="Слайд 4"></button>
+                        <button class="carousel-dot" aria-label="Слайд 5"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <h2 class="cta-title">Готовы находить лучшие лоты?</h2>
+                    <p class="cta-description">Получите доступ к профессиональной аналитике банкротств уже сегодня.</p>
+                    <a href="https://app.bankrot-analytics.ru/register" class="btn btn-primary btn-lg">Начать
+                        бесплатно</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Report Modal -->
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Пример отчета</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="reportFrame" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('reportModal');
+        const reportFrame = document.getElementById('reportFrame');
+        const closeModal = document.getElementById('closeModal');
+        const reportCards = document.querySelectorAll('.report-card');
+
+        // Open modal when clicking on report card
+        reportCards.forEach(card => {
+            const button = card.querySelector('.btn');
+            button.addEventListener('click', () => {
+                const reportPath = card.getAttribute('data-report');
+                reportFrame.src = reportPath;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+            reportFrame.src = '';
+            document.body.style.overflow = '';
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                reportFrame.src = '';
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                reportFrame.src = '';
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Carousel functionality
+        const carouselTrack = document.querySelector('.carousel-track');
+        const carouselCards = document.querySelectorAll('.report-card');
+        const prevBtn = document.querySelector('.carousel-btn-prev');
+        const nextBtn = document.querySelector('.carousel-btn-next');
+        const dots = document.querySelectorAll('.carousel-dot');
+        
+        let currentIndex = 0;
+        let cardsPerView = getCardsPerView();
+        const totalCards = carouselCards.length;
+
+        function getCardsPerView() {
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 640) return 2;
+            return 1;
+        }
+
+        function getMaxIndex() {
+            cardsPerView = getCardsPerView();
+            return Math.max(0, totalCards - cardsPerView);
+        }
+
+        function updateCarousel() {
+            if (carouselCards.length === 0) return;
+            
+            const cardWidth = carouselCards[0].offsetWidth;
+            const gap = 30;
+            const translateX = -currentIndex * (cardWidth + gap);
+            carouselTrack.style.transform = `translateX(${translateX}px)`;
+            
+            const maxIndex = getMaxIndex();
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+            
+            // Update buttons
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex >= maxIndex;
+        }
+
+        function goToSlide(index) {
+            const maxIndex = getMaxIndex();
+            currentIndex = Math.max(0, Math.min(index, maxIndex));
+            updateCarousel();
+        }
+
+        function nextSlide() {
+            const maxIndex = getMaxIndex();
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                updateCarousel();
+            }
+        }
+
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToSlide(index));
+        });
+
+        // Handle window resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const maxIndex = getMaxIndex();
+                if (currentIndex > maxIndex) {
+                    currentIndex = maxIndex;
+                }
+                updateCarousel();
+            }, 250);
+        });
+
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carouselTrack.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        carouselTrack.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        }
+
+        // Initialize carousel after page load
+        window.addEventListener('load', () => {
+            updateCarousel();
+        });
+
+        // Also initialize immediately in case load event already fired
+        if (document.readyState === 'complete') {
+            updateCarousel();
+        } else {
+            updateCarousel();
+        }
+    </script>
+</body>
+
+</html>

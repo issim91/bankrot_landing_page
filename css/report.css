@@ -1,0 +1,185 @@
+:root {
+    /* Override report variables with Landing Page Dark Theme */
+    --bg-color: #0a0a0f;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --text: #ffffff;
+    --text-muted: #94a3b8;
+    --accent: #6366f1;
+    /* Primary purple from landing */
+
+    /* Additional vars from landing */
+    --primary-glow: rgba(99, 102, 241, 0.5);
+    --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Add the glow effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: -20%;
+    left: 20%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+    opacity: 0.15;
+    filter: blur(100px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+h1,
+h2,
+h3,
+.status-title,
+.case-number {
+    font-family: 'Outfit', sans-serif !important;
+}
+
+/* Cards */
+.card,
+.status-card,
+.auction-card,
+.asset-card,
+.lot-card {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
+    color: var(--text);
+}
+
+/* Headers */
+.card-header,
+.status-header,
+.auction-header {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-bottom: 1px solid var(--card-border) !important;
+    color: var(--text) !important;
+}
+
+.header-sticky {
+    background: rgba(10, 10, 15, 0.8) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--card-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Typography Overrides */
+.label,
+.label-inline,
+.lot-date,
+.timeline-date {
+    color: var(--text-muted) !important;
+}
+
+.value,
+.status-value,
+.lot-title {
+    color: var(--text) !important;
+}
+
+/* Specific Report Elements */
+.case-number::after {
+    background: var(--gradient-primary) !important;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4) !important;
+}
+
+/* Tabs (assuming standard tab structure if present, or just buttons) */
+.tab-button {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--card-border);
+}
+
+.tab-button.active {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+}
+
+/* Charts */
+.donut-chart {
+    border-color: #4ade80 !important;
+    /* Keep green for active */
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Assets & Lots */
+.asset-redemption-price {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: var(--card-border) !important;
+    color: var(--text) !important;
+}
+
+.asset-redemption-amount {
+    color: #4ade80 !important;
+}
+
+.asset-trade-link-button {
+    background: rgba(99, 102, 241, 0.1) !important;
+    border-color: rgba(99, 102, 241, 0.3) !important;
+    color: #818cf8 !important;
+}
+
+.asset-trade-link-button:hover {
+    background: rgba(99, 102, 241, 0.2) !important;
+}
+
+/* Timeline */
+.timeline-item::before {
+    background: var(--bg-color) !important;
+    border-color: var(--accent) !important;
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid var(--card-border);
+}
+
+/* Tables in Price Charts */
+.price-chart-wrapper {
+    background: transparent !important;
+    border: 1px solid var(--card-border) !important;
+}
+
+.price-dynamics-table th,
+.price-dynamics-table td {
+    background: transparent !important;
+    border-color: var(--card-border) !important;
+    color: var(--text) !important;
+}
+
+.price-dynamics-table tbody tr.past {
+    background: rgba(255, 255, 255, 0.02) !important;
+    color: var(--text-muted) !important;
+}
+
+.price-dynamics-table tbody tr.current {
+    background: rgba(34, 197, 94, 0.1) !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
