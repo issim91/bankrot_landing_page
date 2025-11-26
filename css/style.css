@@ -1495,6 +1495,51 @@ ul {
     background-clip: text;
 }
 
+.step-ai-icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 1.5rem;
+    line-height: 1;
+    z-index: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.step-ai-icon:hover {
+    transform: scale(1.1);
+}
+
+.step-ai-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    background: rgba(20, 20, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(5px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.step-ai-icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
 .step-content {
     flex: 1;
     display: flex;
