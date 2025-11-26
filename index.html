@@ -163,7 +163,7 @@
                             </li>
                         </ul>
                         <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
-                            style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
+                            style="margin-top: 100px; max-width: 400px;">Получить бесплатный отчет</a>
                     </div>
                     <div class="feature-visual">
                         <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
@@ -236,7 +236,7 @@
                             </li>
                         </ul>
                         <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
-                            style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
+                            style="margin-top: 100px; max-width: 400px;">Получить бесплатный отчет</a>
                     </div>
                     <div class="feature-visual">
                         <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
@@ -296,7 +296,7 @@
                             </li>
                         </ul>
                         <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
-                            style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
+                            style="margin-top: 100px; max-width: 400px;">Получить бесплатный отчет</a>
                     </div>
                     <div class="feature-visual">
                         <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
@@ -353,7 +353,7 @@
                             </li>
                         </ul>
                         <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
-                            style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
+                            style="margin-top: 100px; max-width: 400px;">Получить бесплатный отчет</a>
                     </div>
                     <div class="feature-visual">
                         <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
@@ -416,7 +416,7 @@
                             </li>
                         </ul>
                         <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
-                            style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
+                            style="margin-top: 100px; max-width: 400px;">Получить бесплатный отчет</a>
                     </div>
                     <div class="feature-visual">
                         <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
@@ -544,7 +544,7 @@
     <div id="analysisModal" class="modal">
         <div class="modal-content analysis-modal-content">
             <div class="modal-header modal-header-centered">
-                <h3 class="modal-title">Бесплатный анализ дела</h3>
+                <h3 class="modal-title">Заявка на бесплатный отчет</h3>
                 <button class="modal-close" id="closeAnalysisModal">&times;</button>
             </div>
             <div class="modal-body">
@@ -557,24 +557,24 @@
                     <div class="form-group">
                         <label class="form-label">Куда отправить отчет</label>
                         <div class="contact-method-selector">
-                            <button type="button" class="contact-method-btn active" data-method="email">Email</button>
-                            <button type="button" class="contact-method-btn" data-method="telegram">Telegram</button>
+                            <button type="button" class="contact-method-btn active"
+                                data-method="telegram">Telegram</button>
                             <button type="button" class="contact-method-btn" data-method="whatsapp">WhatsApp</button>
+                            <button type="button" class="contact-method-btn" data-method="email">Email</button>
                         </div>
                         <div class="contact-input-wrapper">
-                            <input type="email" id="contactEmail" name="contact_email"
-                                class="form-input contact-input active" placeholder="name@example.com" required>
                             <input type="text" id="contactTelegram" name="contact_telegram"
-                                class="form-input contact-input" placeholder="@username">
+                                class="form-input contact-input active" placeholder="@username" required>
                             <input type="tel" id="contactWhatsapp" name="contact_whatsapp"
                                 class="form-input contact-input" placeholder="+7 999-999-99-99">
+                            <input type="email" id="contactEmail" name="contact_email" class="form-input contact-input"
+                                placeholder="name@example.com">
                         </div>
                         <!-- Hidden input to store the actual selected contact value for submission -->
                         <input type="hidden" id="selectedContact" name="contact">
-                        <input type="hidden" id="selectedMethod" name="method" value="email">
+                        <input type="hidden" id="selectedMethod" name="method" value="telegram">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg form-submit-btn">Получить анализ</button>
-                    <p class="form-note">Мы пришлем отчет в течение 10 минут</p>
+                    <button type="submit" class="btn btn-primary btn-lg form-submit-btn">Заказать отчет</button>
                 </form>
             </div>
         </div>
@@ -737,25 +737,73 @@
         });
 
         // Handle form submission
-        analysisForm.addEventListener('submit', (e) => {
+        analysisForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            const submitBtn = analysisForm.querySelector('.form-submit-btn');
+            const originalBtnText = submitBtn.textContent;
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправка...';
+
             const caseNumber = document.getElementById('caseNumber').value;
             const method = selectedMethodInput.value;
             const contactValue = contactInputs[method].value;
 
-            // Here you would typically send the data to your backend
-            console.log('Analysis requested:', { caseNumber, method, contact: contactValue });
+            // Data to send
+            const formData = {
+                caseNumber: caseNumber,
+                contactMethod: method,
+                contactValue: contactValue,
+                _subject: `Новая заявка на анализ: ${caseNumber}`
+            };
 
-            // Show success state (simple alert for now, or replace form content)
-            const formContent = analysisForm.innerHTML;
-            analysisForm.innerHTML = `
-                <div style="text-align: center; padding: 40px 0;">
-                    <div style="font-size: 3rem; margin-bottom: 20px;">✅</div>
-                    <h3 style="margin-bottom: 10px;">Заявка принята!</h3>
-                    <p style="color: var(--text-muted);">Мы уже начали анализ дела ${caseNumber}.<br>Отчет придет на ${contactValue}.</p>
-                    <button type="button" class="btn btn-primary" style="margin-top: 20px;" onclick="location.reload()">Закрыть</button>
-                </div>
-            `;
+            // Если выбран способ связи Email, добавляем поле email специально для Formspree
+            // Это повышает доверие антиспам-фильтров и позволяет отвечать на письмо кнопкой "Ответить"
+            if (method === 'email') {
+                formData.email = contactValue;
+            }
+
+            try {
+                const FORMSPREE_ENDPOINT = 'https://formspree.io/f/manzzbpp';
+
+                const response = await fetch(FORMSPREE_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    // Show success state
+                    const methodNames = {
+                        'email': 'Email',
+                        'telegram': 'Telegram',
+                        'whatsapp': 'WhatsApp'
+                    };
+                    const methodName = methodNames[method] || method;
+
+                    analysisForm.innerHTML = `
+                        <div style="text-align: center; padding: 40px 0;">
+                            <div style="font-size: 3rem; margin-bottom: 20px;">✅</div>
+                            <h3 style="margin-bottom: 10px;">Заявка принята!</h3>
+                            <p style="color: var(--text-muted);">Мы уже начали анализ дела ${caseNumber}.<br>Отчет придет на ${methodName}.</p>
+                            <button type="button" class="btn btn-primary" style="margin-top: 20px;" onclick="location.reload()">Закрыть</button>
+                        </div>
+                    `;
+                } else {
+                    throw new Error('Ошибка отправки');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
         });
 
         // Carousel functionality
