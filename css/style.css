@@ -319,6 +319,84 @@ ul {
     background: var(--border-color);
 }
 
+/* Audience Section */
+.audience-section {
+    padding: 50px 0 80px 0;
+    background: linear-gradient(180deg, rgba(10, 10, 15, 0) 0%, rgba(99, 102, 241, 0.05) 50%, rgba(10, 10, 15, 0) 100%);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.audience-header-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.audience-section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-main);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.audience-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.audience-item:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(99, 102, 241, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);
+}
+
+.audience-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 4px;
+}
+
+.audience-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.audience-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-main);
+    line-height: 1.3;
+    margin: 0;
+    flex: 1;
+}
+
+.audience-description {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
 /* Hero Visual & Dashboard Card */
 .hero-visual {
     position: relative;
@@ -512,7 +590,7 @@ ul {
 
 /* Feature Sections */
 .feature-section {
-    padding: 100px 0;
+    padding: 50px 0 100px 0;
     border-top: 1px solid var(--border-color);
 }
 
@@ -1154,7 +1232,7 @@ ul {
 
 /* CTA Section */
 .cta-section {
-    padding: 100px 0;
+    padding: 50px 0 100px 0;
     text-align: center;
 }
 
@@ -1183,7 +1261,7 @@ ul {
 
 /* Reports Showcase Section */
 .reports-section {
-    padding: 100px 0;
+    padding: 50px 0 100px 0;
     border-top: 1px solid var(--border-color);
 }
 
@@ -1491,6 +1569,13 @@ ul {
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+    .audience-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+}
+
 @media (max-width: 968px) {
     .container {
         padding: 0 20px;
@@ -1642,6 +1727,46 @@ ul {
         display: none;
     }
 
+    .audience-section {
+        padding: 40px 0 60px 0;
+    }
+
+    .audience-header-section {
+        margin-bottom: 40px;
+    }
+
+    .audience-section-title {
+        font-size: 2rem;
+    }
+
+    .audience-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .audience-item {
+        text-align: left;
+        padding: 28px;
+    }
+
+    .audience-header {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .audience-icon {
+        font-size: 2rem;
+    }
+
+    .audience-title {
+        font-size: 1.1rem;
+        min-width: 0;
+    }
+
+    .audience-description {
+        font-size: 0.95rem;
+    }
+
     .stat-value {
         font-size: 1.1rem;
     }
@@ -1688,7 +1813,7 @@ ul {
 
     /* Reports Showcase Section - Mobile Adjustments */
     .reports-section {
-        padding: 60px 0;
+        padding: 40px 0 60px 0;
     }
 
     .section-title {
@@ -1820,11 +1945,57 @@ ul {
 
         /* Feature section small mobile */
         .feature-section {
-            padding: 30px 0;
+            padding: 30px 0 40px 0;
+        }
+
+        .feature-icon {
+            display: none;
         }
 
         .feature-list li {
             gap: 10px;
+        }
+
+        .audience-section {
+            padding: 30px 0 40px 0;
+        }
+
+        .audience-header-section {
+            margin-bottom: 32px;
+        }
+
+        .audience-section-title {
+            font-size: 1.75rem;
+        }
+
+        .audience-grid {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .audience-item {
+            padding: 24px;
+        }
+
+        .audience-header {
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .audience-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .audience-title {
+            font-size: 1rem;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .audience-description {
+            font-size: 0.9rem;
         }
 
         /* Navigation small mobile */
@@ -1954,7 +2125,7 @@ ul {
 
     /* CTA section mobile */
     .cta-section {
-        padding: 60px 0;
+        padding: 40px 0 60px 0;
     }
 
     .cta-card {
@@ -1971,7 +2142,7 @@ ul {
 
     /* Feature section mobile */
     .feature-section {
-        padding: 40px 0;
+        padding: 30px 0 40px 0;
     }
 
     .feature-list {
