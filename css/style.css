@@ -169,6 +169,11 @@ ul {
     animation: pulse-glow 2s ease-in-out infinite;
 }
 
+/* Disable animation for hero button */
+.hero-buttons .btn-primary {
+    animation: none;
+}
+
 .btn-primary:hover {
     transform: translateY(-2px) scale(1.05);
     box-shadow:
@@ -316,15 +321,15 @@ ul {
 .stat-divider {
     width: 1px;
     height: 40px;
-    background: var(--border-color);
+    background: linear-gradient(to bottom, transparent, #a5b4fc, transparent);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.8);
 }
 
 /* Audience Section */
 .audience-section {
     padding: 50px 0 80px 0;
     background: linear-gradient(180deg, rgba(10, 10, 15, 0) 0%, rgba(99, 102, 241, 0.05) 50%, rgba(10, 10, 15, 0) 100%);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    position: relative;
 }
 
 .audience-header-section {
@@ -597,7 +602,31 @@ ul {
 /* Feature Sections */
 .feature-section {
     padding: 50px 0 100px 0;
-    border-top: 1px solid var(--border-color);
+    position: relative;
+}
+
+/* Section Separators */
+.audience-section::before,
+.feature-section::before,
+.reports-section::before,
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(99, 102, 241, 0) 10%,
+            rgba(99, 102, 241, 0.2) 30%,
+            rgba(99, 102, 241, 0.8) 50%,
+            rgba(99, 102, 241, 0.2) 70%,
+            rgba(99, 102, 241, 0) 90%,
+            transparent 100%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 10;
 }
 
 .feature-header-centered {
@@ -1247,6 +1276,7 @@ ul {
 .cta-section {
     padding: 50px 0 100px 0;
     text-align: center;
+    position: relative;
 }
 
 .cta-card {
@@ -1275,7 +1305,7 @@ ul {
 /* Reports Showcase Section */
 .reports-section {
     padding: 50px 0 100px 0;
-    border-top: 1px solid var(--border-color);
+    position: relative;
 }
 
 .section-header {
