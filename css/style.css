@@ -162,7 +162,7 @@ ul {
     background: var(--gradient-primary);
     color: white;
     border: none;
-    box-shadow: 
+    box-shadow:
         0 4px 20px rgba(99, 102, 241, 0.4),
         0 0 40px rgba(99, 102, 241, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -171,7 +171,7 @@ ul {
 
 .btn-primary:hover {
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 
+    box-shadow:
         0 8px 40px rgba(99, 102, 241, 0.6),
         0 0 60px rgba(99, 102, 241, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
@@ -183,14 +183,17 @@ ul {
 }
 
 @keyframes pulse-glow {
-    0%, 100% {
-        box-shadow: 
+
+    0%,
+    100% {
+        box-shadow:
             0 4px 20px rgba(99, 102, 241, 0.4),
             0 0 40px rgba(99, 102, 241, 0.2),
             inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
+
     50% {
-        box-shadow: 
+        box-shadow:
             0 4px 30px rgba(99, 102, 241, 0.6),
             0 0 60px rgba(99, 102, 241, 0.3),
             inset 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -467,7 +470,7 @@ ul {
     background: rgba(20, 20, 30, 0.95) !important;
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 
+    box-shadow:
         0 8px 32px rgba(0, 0, 0, 0.6),
         0 0 0 1px rgba(255, 255, 255, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -513,11 +516,11 @@ ul {
     border-top: 1px solid var(--border-color);
 }
 
-    .feature-header-centered {
-        text-align: center;
-        max-width: 800px;
-        margin: 0 auto 40px;
-    }
+.feature-header-centered {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
 
 .feature-title-wrapper {
     display: inline-flex;
@@ -2030,5 +2033,143 @@ ul {
         width: 28px;
         height: 28px;
         font-size: 1rem;
+    }
+}
+
+/* Analysis Modal Form */
+.analysis-form {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.form-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px 16px;
+    color: var(--text-main);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.form-input::placeholder {
+    color: var(--text-muted);
+}
+
+.form-submit-btn {
+    margin-top: 16px;
+    width: 100%;
+}
+
+.form-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 16px;
+}
+
+.analysis-modal-content {
+    max-width: 600px;
+    height: auto;
+    max-height: 90vh;
+    border: 1px solid rgba(99, 102, 241, 0.5);
+    box-shadow:
+        0 0 0 1px rgba(99, 102, 241, 0.2),
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        0 0 50px rgba(99, 102, 241, 0.25);
+}
+
+/* Contact Method Selector */
+.modal-header-centered {
+    justify-content: center;
+    position: relative;
+}
+
+.modal-header-centered .modal-close {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.contact-method-selector {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 4px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.contact-method-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+
+.contact-method-btn:hover {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.contact-method-btn.active {
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+    font-weight: 600;
+}
+
+.contact-input {
+    display: none;
+}
+
+.contact-input.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

@@ -162,7 +162,8 @@
                                     и событий.</span>
                             </li>
                         </ul>
-                        <a href="https://app.bankrot-analytics.ru/register" class="btn btn-primary btn-lg" style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
+                        <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
+                            style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
                     </div>
                     <div class="feature-visual">
                         <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
@@ -186,7 +187,8 @@
                 <div class="feature-header-centered">
                     <div class="feature-title-wrapper">
                         <div class="feature-icon">🏢</div>
-                        <h2 class="feature-title">Полная инвентаризация <span class="text-gradient">имущества</span></h2>
+                        <h2 class="feature-title">Полная инвентаризация <span class="text-gradient">имущества</span>
+                        </h2>
                     </div>
                     <p class="feature-description">
                         Получите детальный список всех активов должника. <br> Мы извлекаем данные из инвентаризационных
@@ -233,7 +235,8 @@
                                     торгов.</span>
                             </li>
                         </ul>
-                        <a href="https://app.bankrot-analytics.ru/register" class="btn btn-primary btn-lg" style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
+                        <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
+                            style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
                     </div>
                     <div class="feature-visual">
                         <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
@@ -292,7 +295,8 @@
                                     проведения.</span>
                             </li>
                         </ul>
-                        <a href="https://app.bankrot-analytics.ru/register" class="btn btn-primary btn-lg" style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
+                        <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
+                            style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
                     </div>
                     <div class="feature-visual">
                         <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
@@ -348,7 +352,8 @@
                                     кредитору.</span>
                             </li>
                         </ul>
-                        <a href="https://app.bankrot-analytics.ru/register" class="btn btn-primary btn-lg" style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
+                        <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
+                            style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
                     </div>
                     <div class="feature-visual">
                         <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
@@ -410,7 +415,8 @@
                                     (40).</span>
                             </li>
                         </ul>
-                        <a href="https://app.bankrot-analytics.ru/register" class="btn btn-primary btn-lg" style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
+                        <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
+                            style="margin-top: 100px; max-width: 400px;">Получить бесплатный анализ</a>
                     </div>
                     <div class="feature-visual">
                         <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
@@ -433,8 +439,9 @@
                 </div>
                 <div class="carousel-wrapper">
                     <button class="carousel-btn carousel-btn-prev" aria-label="Предыдущий слайд">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M15 18l-6-6 6-6"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" />
                         </svg>
                     </button>
                     <div class="carousel-container">
@@ -491,8 +498,9 @@
                         </div>
                     </div>
                     <button class="carousel-btn carousel-btn-next" aria-label="Следующий слайд">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 18l6-6-6-6"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
                         </svg>
                     </button>
                     <div class="carousel-dots">
@@ -528,6 +536,46 @@
             </div>
             <div class="modal-body">
                 <iframe id="reportFrame" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analysis Request Modal -->
+    <div id="analysisModal" class="modal">
+        <div class="modal-content analysis-modal-content">
+            <div class="modal-header modal-header-centered">
+                <h3 class="modal-title">Бесплатный анализ дела</h3>
+                <button class="modal-close" id="closeAnalysisModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="analysis-form" id="analysisForm">
+                    <div class="form-group">
+                        <label for="caseNumber" class="form-label">Номер дела</label>
+                        <input type="text" id="caseNumber" name="caseNumber" class="form-input"
+                            placeholder="Например: А40-123456/2023" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Куда отправить отчет</label>
+                        <div class="contact-method-selector">
+                            <button type="button" class="contact-method-btn active" data-method="email">Email</button>
+                            <button type="button" class="contact-method-btn" data-method="telegram">Telegram</button>
+                            <button type="button" class="contact-method-btn" data-method="whatsapp">WhatsApp</button>
+                        </div>
+                        <div class="contact-input-wrapper">
+                            <input type="email" id="contactEmail" name="contact_email"
+                                class="form-input contact-input active" placeholder="name@example.com" required>
+                            <input type="text" id="contactTelegram" name="contact_telegram"
+                                class="form-input contact-input" placeholder="@username">
+                            <input type="tel" id="contactWhatsapp" name="contact_whatsapp"
+                                class="form-input contact-input" placeholder="+7 999-999-99-99">
+                        </div>
+                        <!-- Hidden input to store the actual selected contact value for submission -->
+                        <input type="hidden" id="selectedContact" name="contact">
+                        <input type="hidden" id="selectedMethod" name="method" value="email">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg form-submit-btn">Получить анализ</button>
+                    <p class="form-note">Мы пришлем отчет в течение 10 минут</p>
+                </form>
             </div>
         </div>
     </div>
@@ -568,11 +616,146 @@
 
         // Close modal with Escape key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                modal.classList.remove('active');
-                reportFrame.src = '';
+            if (e.key === 'Escape') {
+                if (modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                    reportFrame.src = '';
+                    document.body.style.overflow = '';
+                }
+                if (analysisModal.classList.contains('active')) {
+                    analysisModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+
+        // Analysis Modal functionality
+        const analysisModal = document.getElementById('analysisModal');
+        const closeAnalysisModal = document.getElementById('closeAnalysisModal');
+        const analysisBtns = document.querySelectorAll('.js-open-analysis-modal');
+        const analysisForm = document.getElementById('analysisForm');
+
+        // Open analysis modal
+        analysisBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                analysisModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close analysis modal
+        closeAnalysisModal.addEventListener('click', () => {
+            analysisModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close analysis modal when clicking outside
+        analysisModal.addEventListener('click', (e) => {
+            if (e.target === analysisModal) {
+                analysisModal.classList.remove('active');
                 document.body.style.overflow = '';
             }
+        });
+
+        // Contact Method Switching
+        const methodBtns = document.querySelectorAll('.contact-method-btn');
+        const contactInputs = {
+            'email': document.getElementById('contactEmail'),
+            'telegram': document.getElementById('contactTelegram'),
+            'whatsapp': document.getElementById('contactWhatsapp')
+        };
+        const selectedMethodInput = document.getElementById('selectedMethod');
+
+        methodBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update buttons
+                methodBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Update inputs
+                const method = btn.getAttribute('data-method');
+                selectedMethodInput.value = method;
+
+                Object.values(contactInputs).forEach(input => {
+                    input.classList.remove('active');
+                    input.required = false;
+                });
+
+                const activeInput = contactInputs[method];
+                activeInput.classList.add('active');
+                activeInput.required = true;
+                activeInput.focus();
+            });
+        });
+
+        // Phone Mask Logic
+        const phoneInput = document.getElementById('contactWhatsapp');
+
+        const formatPhone = (value) => {
+            if (!value) return value;
+            const phoneNumber = value.replace(/\D/g, '');
+
+            // We always start with +7
+            if (phoneNumber.length < 1) return '+7';
+
+            let numbers = phoneNumber;
+            if (phoneNumber.startsWith('7')) {
+                numbers = phoneNumber.substring(1);
+            }
+
+            // Limit max length
+            numbers = numbers.substring(0, 10);
+
+            let formatted = '+7';
+            if (numbers.length > 0) {
+                formatted += ' ' + numbers.substring(0, 3);
+            }
+            if (numbers.length >= 4) {
+                formatted += '-' + numbers.substring(3, 6);
+            }
+            if (numbers.length >= 7) {
+                formatted += '-' + numbers.substring(6, 8);
+            }
+            if (numbers.length >= 9) {
+                formatted += '-' + numbers.substring(8, 10);
+            }
+
+            return formatted;
+        };
+
+        phoneInput.addEventListener('input', (e) => {
+            const formatted = formatPhone(e.target.value);
+            e.target.value = formatted;
+        });
+
+        // Focus handler to ensure +7 is there
+        phoneInput.addEventListener('focus', (e) => {
+            if (!e.target.value) {
+                e.target.value = '+7 ';
+            }
+        });
+
+        // Handle form submission
+        analysisForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const caseNumber = document.getElementById('caseNumber').value;
+            const method = selectedMethodInput.value;
+            const contactValue = contactInputs[method].value;
+
+            // Here you would typically send the data to your backend
+            console.log('Analysis requested:', { caseNumber, method, contact: contactValue });
+
+            // Show success state (simple alert for now, or replace form content)
+            const formContent = analysisForm.innerHTML;
+            analysisForm.innerHTML = `
+                <div style="text-align: center; padding: 40px 0;">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">✅</div>
+                    <h3 style="margin-bottom: 10px;">Заявка принята!</h3>
+                    <p style="color: var(--text-muted);">Мы уже начали анализ дела ${caseNumber}.<br>Отчет придет на ${contactValue}.</p>
+                    <button type="button" class="btn btn-primary" style="margin-top: 20px;" onclick="location.reload()">Закрыть</button>
+                </div>
+            `;
         });
 
         // Carousel functionality
@@ -581,7 +764,7 @@
         const prevBtn = document.querySelector('.carousel-btn-prev');
         const nextBtn = document.querySelector('.carousel-btn-next');
         const dots = document.querySelectorAll('.carousel-dot');
-        
+
         let currentIndex = 0;
         let cardsPerView = getCardsPerView();
         const totalCards = carouselCards.length;
@@ -599,19 +782,19 @@
 
         function updateCarousel() {
             if (carouselCards.length === 0) return;
-            
+
             const cardWidth = carouselCards[0].offsetWidth;
             const gap = 30;
             const translateX = -currentIndex * (cardWidth + gap);
             carouselTrack.style.transform = `translateX(${translateX}px)`;
-            
+
             const maxIndex = getMaxIndex();
-            
+
             // Update dots
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentIndex);
             });
-            
+
             // Update buttons
             prevBtn.disabled = currentIndex === 0;
             nextBtn.disabled = currentIndex >= maxIndex;
@@ -675,7 +858,7 @@
         function handleSwipe() {
             const swipeThreshold = 50;
             const diff = touchStartX - touchEndX;
-            
+
             if (Math.abs(diff) > swipeThreshold) {
                 if (diff > 0) {
                     nextSlide();
