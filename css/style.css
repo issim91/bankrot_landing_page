@@ -812,13 +812,16 @@ ul {
 
 /* Feature Mockups */
 .feature-card-mockup {
-    padding: 32px;
+    padding: 24px;
     min-height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.25);
+    background: rgba(35, 35, 50, 0.6);
 }
 
 /* Mockup: Charts */
@@ -937,10 +940,13 @@ ul {
 
 /* Single Screenshot Container */
 .screenshot-container-single {
-    padding: 30px !important;
+    padding: 24px !important;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.25);
+    background: rgba(35, 35, 50, 0.6);
 }
 
 .screenshot-img-single {
