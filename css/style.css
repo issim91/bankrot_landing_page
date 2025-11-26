@@ -341,6 +341,10 @@ ul {
     margin: 0;
 }
 
+.audience-section .feature-title-wrapper {
+    margin-bottom: 20px;
+}
+
 .audience-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -619,6 +623,7 @@ ul {
 
 .feature-header-centered .feature-title {
     margin: 0;
+    white-space: nowrap;
 }
 
 .feature-header-centered .feature-description {
@@ -1902,6 +1907,10 @@ ul {
 
         .feature-title {
             font-size: 1.75rem;
+        }
+
+        .feature-header-centered .feature-title {
+            white-space: normal;
         }
 
         .feature-description {
