@@ -1910,7 +1910,7 @@ ul {
     }
 
     .hero {
-        padding-top: calc(var(--header-height) + 30px);
+        padding-top: calc(var(--header-height) + 40px);
         padding-bottom: 40px;
     }
 
@@ -2402,7 +2402,7 @@ ul {
         }
 
         .hero {
-            padding-top: calc(var(--header-height) + 20px);
+            padding-top: calc(var(--header-height) + 60px);
             padding-bottom: 30px;
         }
 
@@ -2420,6 +2420,13 @@ ul {
         .hero-content {
             width: 100%;
             padding: 0;
+        }
+
+        .badge {
+            display: inline-flex;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 0.8rem;
         }
 
         .hero-stats {
