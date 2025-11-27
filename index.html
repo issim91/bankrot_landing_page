@@ -691,68 +691,45 @@
                         Посмотрите, как выглядят готовые отчеты по реальным делам о банкротстве
                     </p>
                 </div>
-                <div class="carousel-wrapper">
-                    <button class="carousel-btn carousel-btn-prev" aria-label="Предыдущий слайд">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M15 18l-6-6 6-6" />
-                        </svg>
-                    </button>
-                    <div class="carousel-container">
-                        <div class="carousel-track">
-                            <div class="report-card" data-report="reports/case_28-43962016.html">
-                                <h3 class="report-title">Дело №А28-4396/2016</h3>
-                                <p class="report-description">Физ. лицо <br> Реализация имущества</p>
-                                <div class="report-stats">
-                                    <span>47 лотов</span>
-                                    <span>9 кредиторов</span>
-                                    <span>90 сообщений</span>
-                                    <span>152 документа</span>
-                                </div>
-                                <button class="btn btn-outline"
-                                    onclick="ym(105512416, 'reachGoal', 'view_report_card'); return true;">Посмотреть
-                                    отчет</button>
-                            </div>
-                            <div class="report-card" data-report="reports/case_32-545772023.html">
-                                <h3 class="report-title">Дело №А32-54577/2023</h3>
-                                <p class="report-description">ООО "СЗ СК ГРАНЬ" <br> Конкурсное производство</p>
-                                <div class="report-stats">
-                                    <span>17 лотов</span>
-                                    <span>23 кредитора</span>
-                                    <span>40 сообщений</span>
-                                    <span>134 документа</span>
-                                </div>
-                                <button class="btn btn-outline"
-                                    onclick="ym(105512416, 'reachGoal', 'view_report_card'); return true;">Посмотреть
-                                    отчет</button>
-                            </div>
-                            <div class="report-card" data-report="reports/case_55-365452022.html">
-                                <h3 class="report-title">Дело №А55-36545/2022</h3>
-                                <p class="report-description">Физ. лицо <br> Дело завершено</p>
-                                <div class="report-stats">
-                                    <span>3 лота</span>
-                                    <span>9 кредиторов</span>
-                                    <span>15 сообщений</span>
-                                    <span>45 документов</span>
-                                </div>
-                                <button class="btn btn-outline"
-                                    onclick="ym(105512416, 'reachGoal', 'view_report_card'); return true;">Посмотреть
-                                    отчет</button>
-                            </div>
+                <div class="reports-grid">
+                    <div class="report-card" data-report="reports/case_28-43962016.html">
+                        <h3 class="report-title">Дело №А28-4396/2016</h3>
+                        <p class="report-description">Физ. лицо <br> Реализация имущества</p>
+                        <div class="report-stats">
+                            <span>47 лотов</span>
+                            <span>9 кредиторов</span>
+                            <span>90 сообщений</span>
+                            <span>152 документа</span>
                         </div>
+                        <button class="btn btn-outline"
+                            onclick="ym(105512416, 'reachGoal', 'view_report_card'); return true;">Посмотреть
+                            отчет</button>
                     </div>
-                    <button class="carousel-btn carousel-btn-next" aria-label="Следующий слайд">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M9 18l6-6-6-6" />
-                        </svg>
-                    </button>
-                    <div class="carousel-dots">
-                        <button class="carousel-dot active" aria-label="Слайд 1"></button>
-                        <button class="carousel-dot" aria-label="Слайд 2"></button>
-                        <button class="carousel-dot" aria-label="Слайд 3"></button>
-                        <button class="carousel-dot" aria-label="Слайд 4"></button>
-                        <button class="carousel-dot" aria-label="Слайд 5"></button>
+                    <div class="report-card" data-report="reports/case_32-545772023.html">
+                        <h3 class="report-title">Дело №А32-54577/2023</h3>
+                        <p class="report-description">ООО "СЗ СК ГРАНЬ" <br> Конкурсное производство</p>
+                        <div class="report-stats">
+                            <span>17 лотов</span>
+                            <span>23 кредитора</span>
+                            <span>40 сообщений</span>
+                            <span>134 документа</span>
+                        </div>
+                        <button class="btn btn-outline"
+                            onclick="ym(105512416, 'reachGoal', 'view_report_card'); return true;">Посмотреть
+                            отчет</button>
+                    </div>
+                    <div class="report-card" data-report="reports/case_55-365452022.html">
+                        <h3 class="report-title">Дело №А55-36545/2022</h3>
+                        <p class="report-description">Физ. лицо <br> Дело завершено</p>
+                        <div class="report-stats">
+                            <span>3 лота</span>
+                            <span>9 кредиторов</span>
+                            <span>15 сообщений</span>
+                            <span>45 документов</span>
+                        </div>
+                        <button class="btn btn-outline"
+                            onclick="ym(105512416, 'reachGoal', 'view_report_card'); return true;">Посмотреть
+                            отчет</button>
                     </div>
                 </div>
             </div>
@@ -1054,127 +1031,7 @@
             }
         });
 
-        // Carousel functionality
-        const carouselTrack = document.querySelector('.carousel-track');
-        const carouselCards = document.querySelectorAll('.report-card');
-        const prevBtn = document.querySelector('.carousel-btn-prev');
-        const nextBtn = document.querySelector('.carousel-btn-next');
-        const dots = document.querySelectorAll('.carousel-dot');
 
-        let currentIndex = 0;
-        let cardsPerView = getCardsPerView();
-        const totalCards = carouselCards.length;
-
-        function getCardsPerView() {
-            if (window.innerWidth >= 1024) return 3;
-            if (window.innerWidth >= 640) return 2;
-            return 1;
-        }
-
-        function getMaxIndex() {
-            cardsPerView = getCardsPerView();
-            return Math.max(0, totalCards - cardsPerView);
-        }
-
-        function updateCarousel() {
-            if (carouselCards.length === 0) return;
-
-            const cardWidth = carouselCards[0].offsetWidth;
-            const gap = 30;
-            const translateX = -currentIndex * (cardWidth + gap);
-            carouselTrack.style.transform = `translateX(${translateX}px)`;
-
-            const maxIndex = getMaxIndex();
-
-            // Update dots
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex);
-            });
-
-            // Update buttons
-            prevBtn.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex >= maxIndex;
-        }
-
-        function goToSlide(index) {
-            const maxIndex = getMaxIndex();
-            currentIndex = Math.max(0, Math.min(index, maxIndex));
-            updateCarousel();
-        }
-
-        function nextSlide() {
-            const maxIndex = getMaxIndex();
-            if (currentIndex < maxIndex) {
-                currentIndex++;
-                updateCarousel();
-            }
-        }
-
-        function prevSlide() {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        }
-
-        // Event listeners
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => goToSlide(index));
-        });
-
-        // Handle window resize
-        let resizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                const maxIndex = getMaxIndex();
-                if (currentIndex > maxIndex) {
-                    currentIndex = maxIndex;
-                }
-                updateCarousel();
-            }, 250);
-        });
-
-        // Touch/swipe support
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        carouselTrack.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-
-        carouselTrack.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
-
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    nextSlide();
-                } else {
-                    prevSlide();
-                }
-            }
-        }
-
-        // Initialize carousel after page load
-        window.addEventListener('load', () => {
-            updateCarousel();
-        });
-
-        // Also initialize immediately in case load event already fired
-        if (document.readyState === 'complete') {
-            updateCarousel();
-        } else {
-            updateCarousel();
-        }
     </script>
 </body>
 
