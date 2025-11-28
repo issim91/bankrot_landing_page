@@ -767,7 +767,7 @@
                                 <div class="comparison-cell metric-name">Стоимость</div>
                                 <div class="comparison-cell">
                                     <div class="metric-value bad" id="manual-cost-display">2 000 ₽</div>
-                                    <div class="metric-sub">при ЗП 120 000 ₽</div>
+                                    <div class="metric-sub">при ЗП аналитика 120 000 ₽</div>
                                 </div>
                                 <div class="comparison-cell">
                                     <div class="metric-value good" id="ai-cost-display">~890 ₽</div>
@@ -1150,8 +1150,45 @@
             }
         });
 
+        // Floating Calculator Button
+        const floatingBtn = document.getElementById('floatingCalculatorBtn');
+        const savingsSection = document.getElementById('savings');
+
+        if (floatingBtn && savingsSection) {
+            // Smooth scroll to savings section
+            floatingBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                savingsSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+
+            // Hide/show button based on scroll position
+            const handleScroll = () => {
+                const rect = savingsSection.getBoundingClientRect();
+                const isInView = rect.top <= 100 && rect.bottom >= window.innerHeight;
+                
+                if (isInView) {
+                    floatingBtn.style.opacity = '0';
+                    floatingBtn.style.pointerEvents = 'none';
+                } else {
+                    floatingBtn.style.opacity = '1';
+                    floatingBtn.style.pointerEvents = 'auto';
+                }
+            };
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Initial check
+        }
 
     </script>
+
+    <!-- Floating Calculator Button -->
+    <a href="#savings" class="floating-calculator-btn" id="floatingCalculatorBtn" onclick="ym(105512416, 'reachGoal', 'click_floating_calculator'); return true;">
+        <span class="floating-btn-icon">💸</span>
+        <span class="floating-btn-text">Посчитать выгоду</span>
+    </a>
 </body>
 
 </html>
