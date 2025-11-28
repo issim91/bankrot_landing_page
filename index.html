@@ -735,6 +735,123 @@
             </div>
         </section>
 
+        <!-- Savings Section -->
+        <section class="savings-section" id="savings">
+            <div class="container">
+                <div class="feature-header-centered">
+                    <div class="feature-title-wrapper">
+                        <div class="feature-icon">📉</div>
+                        <h2 class="feature-title">Калькулятор <span class="text-gradient">выгоды</span></h2>
+                    </div>
+                    <p class="feature-description">
+                        Почему платить за подписку выгоднее, чем содержать штат аналитиков
+                    </p>
+                </div>
+
+                <div class="calculator-wrapper-horizontal">
+                    <!-- Left Side: Controls -->
+                    <div class="calculator-controls-panel glass-card">
+                        <!-- Volume Toggle -->
+                        <div class="volume-toggle-controls">
+                            <div class="volume-toggle">
+                                <button class="volume-btn active" data-volume="1">1 дело</button>
+                                <button class="volume-btn" data-volume="10">10 дел</button>
+                                <button class="volume-btn" data-volume="100">100 дел</button>
+                            </div>
+                        </div>
+
+                        <div class="calculator-controls-vertical">
+                            <div class="control-group">
+                                <div class="control-header">
+                                    <label>Торги</label>
+                                    <span id="val-auctions">12</span>
+                                </div>
+                                <input type="range" id="range-auctions" min="0" max="50" value="12" class="slider">
+                            </div>
+                            <div class="control-group">
+                                <div class="control-header">
+                                    <label>Имущество</label>
+                                    <span id="val-lots">8</span>
+                                </div>
+                                <input type="range" id="range-lots" min="0" max="20" value="8" class="slider">
+                            </div>
+                            <div class="control-group">
+                                <div class="control-header">
+                                    <label>Сообщения ЕФРСБ</label>
+                                    <span id="val-msgs">64</span>
+                                </div>
+                                <input type="range" id="range-msgs" min="0" max="200" value="64" class="slider">
+                            </div>
+                            <div class="control-group">
+                                <div class="control-header">
+                                    <label>Документы КАД</label>
+                                    <span id="val-docs">101</span>
+                                </div>
+                                <input type="range" id="range-docs" min="0" max="500" value="101" class="slider">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Comparison -->
+                    <div class="comparison-wrapper">
+                        <!-- Unified Comparison Table -->
+                        <div class="comparison-table glass-card">
+                            <div class="comparison-row comparison-header">
+                                <div class="comparison-cell"></div>
+                                <div class="comparison-cell">
+                                    <div class="comparison-header-title bad">Ручной анализ</div>
+                                </div>
+                                <div class="comparison-cell">
+                                    <div class="comparison-header-title good">Bankrot Analytics</div>
+                                </div>
+                            </div>
+
+                            <div class="comparison-row">
+                                <div class="comparison-cell metric-name">Время</div>
+                                <div class="comparison-cell">
+                                    <div class="metric-value bad" id="manual-time-display">3 часа</div>
+                                </div>
+                                <div class="comparison-cell">
+                                    <div class="metric-value good" id="ai-time-display">7 минут</div>
+                                </div>
+                            </div>
+
+                            <div class="comparison-row">
+                                <div class="comparison-cell metric-name">Стоимость</div>
+                                <div class="comparison-cell">
+                                    <div class="metric-value bad" id="manual-cost-display">2 000 ₽</div>
+                                    <div class="metric-sub">при ЗП 120 000 ₽</div>
+                                </div>
+                                <div class="comparison-cell">
+                                    <div class="metric-value good" id="ai-cost-display">~890 ₽</div>
+                                    <div class="metric-sub">в рамках подписки</div>
+                                </div>
+                            </div>
+
+                            <!-- Savings Summary Row -->
+                            <div class="savings-summary-row">
+                                <div class="savings-box">
+                                    <div class="savings-icon">💰</div>
+                                    <div class="savings-info">
+                                        <div class="savings-label-small">Экономия <span id="volume-label">на 1
+                                                дело</span></div>
+                                        <div class="savings-value-large" id="savings-total">1 348 ₽</div>
+                                    </div>
+                                </div>
+                                <div class="savings-box">
+                                    <div class="savings-icon">⚡</div>
+                                    <div class="savings-info">
+                                        <div class="savings-label-small" >Экономия времени</div>
+                                        <div class="savings-value-large time" id="time-savings">2 ч 52 мин</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
@@ -801,6 +918,8 @@
             </div>
         </div>
     </div>
+
+    <script src="js/calculator.js"></script>
 
     <script>
         // Modal functionality
