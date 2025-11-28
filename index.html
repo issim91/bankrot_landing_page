@@ -719,7 +719,7 @@
                         <div class="calculator-controls-vertical">
                             <div class="control-group">
                                 <div class="control-header">
-                                    <label>Торги</label>
+                                    <label>Количество Торгов</label>
                                     <span id="val-auctions">12</span>
                                 </div>
                                 <input type="range" id="range-auctions" min="0" max="50" value="12" class="slider">
@@ -1151,7 +1151,7 @@
             // Smooth scroll to savings section
             floatingBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                savingsSection.scrollIntoView({ 
+                savingsSection.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
@@ -1161,7 +1161,7 @@
             const handleScroll = () => {
                 const rect = savingsSection.getBoundingClientRect();
                 const isInView = rect.top <= 100 && rect.bottom >= window.innerHeight;
-                
+
                 if (isInView) {
                     floatingBtn.style.opacity = '0';
                     floatingBtn.style.pointerEvents = 'none';
@@ -1178,7 +1178,8 @@
     </script>
 
     <!-- Floating Calculator Button -->
-    <a href="#savings" class="floating-calculator-btn" id="floatingCalculatorBtn" onclick="ym(105512416, 'reachGoal', 'click_floating_calculator'); return true;">
+    <a href="#savings" class="floating-calculator-btn" id="floatingCalculatorBtn"
+        onclick="ym(105512416, 'reachGoal', 'click_floating_calculator'); return true;">
         <span class="floating-btn-icon">💸</span>
         <span class="floating-btn-text">Посчитать выгоду</span>
     </a>
