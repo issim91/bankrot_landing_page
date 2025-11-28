@@ -4,13 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const MINUTE_RATE = HOURLY_RATE / 60;
 
     // Weights calculated to give 1h 50min (110 min) for default values:
-    // 12 auctions, 5 lots, 40 messages, 100 documents
+    // 12 auctions, 40 messages, 100 documents
     const TIME_WEIGHTS = {
-        doc: 0.5,      // 0.5 min per document (100 * 0.5 = 50 min)
-        msg: 0.5,      // 0.5 min per message (40 * 0.5 = 20 min)
-        auction: 2,    // 2 mins per auction (12 * 2 = 24 min)
-        lot: 3.2       // 3.2 mins per lot (5 * 3.2 = 16 min)
-        // Total: 50 + 20 + 24 + 16 = 110 minutes (1h 50min)
+        doc: 0.6,      // 0.6 min per document (100 * 0.6 = 60 min)
+        msg: 0.65,     // 0.65 min per message (40 * 0.65 = 26 min)
+        auction: 2     // 2 mins per auction (12 * 2 = 24 min)
+        // Total: 60 + 26 + 24 = 110 minutes (1h 50min)
     };
 
     const AI_BASE_TIME = 7; // base minutes for AI processing
@@ -19,8 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const AI_TIME_WEIGHTS = {
         doc: 0.01,      // 0.01 min per document
         msg: 0.01,      // 0.01 min per message
-        auction: 0.02, // 0.02 mins per auction
-        lot: 0.03       // 0.03 mins per lot
+        auction: 0.02  // 0.02 mins per auction
     };
 
     // AI pricing tiers
@@ -40,15 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputs = {
         docs: document.getElementById('range-docs'),
         msgs: document.getElementById('range-msgs'),
-        auctions: document.getElementById('range-auctions'),
-        lots: document.getElementById('range-lots')
+        auctions: document.getElementById('range-auctions')
     };
 
     const displays = {
         docs: document.getElementById('val-docs'),
         msgs: document.getElementById('val-msgs'),
-        auctions: document.getElementById('val-auctions'),
-        lots: document.getElementById('val-lots')
+        auctions: document.getElementById('val-auctions')
     };
 
     const results = {
@@ -58,6 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
         aiCostDisplay: document.getElementById('ai-cost-display'),
         savingsTotal: document.getElementById('savings-total'),
         timeSavings: document.getElementById('time-savings'),
+        timeSavingsDisplay: document.getElementById('time-savings-display'),
+        savingsCostDisplay: document.getElementById('savings-cost-display'),
         volumeLabel: document.getElementById('volume-label')
     };
 
@@ -115,19 +113,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const docs = parseInt(inputs.docs.value) || 0;
         const msgs = parseInt(inputs.msgs.value) || 0;
         const auctions = parseInt(inputs.auctions.value) || 0;
-        const lots = parseInt(inputs.lots.value) || 0;
 
         // Update displays
         displays.docs.textContent = docs;
         displays.msgs.textContent = msgs;
         displays.auctions.textContent = auctions;
-        displays.lots.textContent = lots;
 
         // Calculate Manual Stats (per case)
         const manualMinutesPerCase = (docs * TIME_WEIGHTS.doc) +
             (msgs * TIME_WEIGHTS.msg) +
-            (auctions * TIME_WEIGHTS.auction) +
-            (lots * TIME_WEIGHTS.lot);
+            (auctions * TIME_WEIGHTS.auction);
 
         const manualCostPerCase = manualMinutesPerCase * MINUTE_RATE;
 
@@ -135,8 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const aiMinutesPerCase = AI_BASE_TIME +
             (docs * AI_TIME_WEIGHTS.doc) +
             (msgs * AI_TIME_WEIGHTS.msg) +
-            (auctions * AI_TIME_WEIGHTS.auction) +
-            (lots * AI_TIME_WEIGHTS.lot);
+            (auctions * AI_TIME_WEIGHTS.auction);
 
         // Calculate for current volume
         const manualMinutes = manualMinutesPerCase * currentVolume;
@@ -149,14 +143,29 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalTimeSaved = (manualMinutesPerCase - aiMinutesPerCase) * currentVolume;
 
         // Update UI
-        results.manualTimeDisplay.textContent = formatTime(manualMinutes);
-        results.manualCostDisplay.textContent = formatCurrency(manualCost);
+        results.manualTimeDisplay.textContent = `≈ ${formatTime(manualMinutes)}`;
+        results.manualCostDisplay.textContent = `≈ ${formatCurrency(manualCost)}`;
         results.aiTimeDisplay.textContent = formatTime(aiMinutes);
         results.aiCostDisplay.textContent = formatCurrency(aiCost);
 
-        results.savingsTotal.textContent = formatCurrency(totalSavings);
-        results.timeSavings.textContent = `+ ${formatTimeSavings(totalTimeSaved)}`;
-        results.volumeLabel.textContent = getVolumeLabel();
+        // Update savings column
+        if (results.timeSavingsDisplay) {
+            results.timeSavingsDisplay.textContent = `+ ${formatTimeSavings(totalTimeSaved)}`;
+        }
+        if (results.savingsCostDisplay) {
+            results.savingsCostDisplay.textContent = formatCurrency(totalSavings);
+        }
+        if (results.volumeLabel) {
+            results.volumeLabel.textContent = getVolumeLabel();
+        }
+
+        // Legacy support for old savings boxes (if they exist)
+        if (results.savingsTotal) {
+            results.savingsTotal.textContent = formatCurrency(totalSavings);
+        }
+        if (results.timeSavings) {
+            results.timeSavings.textContent = `+ ${formatTimeSavings(totalTimeSaved)}`;
+        }
 
         // Visual feedback for manual card
         const manualCard = document.querySelector('.savings-card.manual');
