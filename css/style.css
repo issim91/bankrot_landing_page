@@ -612,6 +612,7 @@ ul {
 /* Section Separators */
 .audience-section::before,
 .feature-section::before,
+.features-slider-section::before,
 .how-it-works-section::before,
 .reports-section::before,
 .savings-section::before,
@@ -3639,5 +3640,78 @@ ul {
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+/* Features Slider */
+.features-slider-section {
+    padding: 50px 0 100px 0;
+    position: relative;
+}
+
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.slider-tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 100px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.slider-tab:hover {
+    background: var(--bg-card-hover);
+    color: var(--text-main);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.slider-tab.active {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: var(--primary);
+    color: var(--text-main);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+}
+
+.slider-tab .icon {
+    font-size: 1.2rem;
+}
+
+.slider-viewport {
+    position: relative;
+    min-height: 600px;
+}
+
+.slide {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.slide.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

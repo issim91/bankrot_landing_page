@@ -213,384 +213,431 @@
             </div>
         </section>
 
-        <!-- Feature 1: Status & General Stats -->
-        <section class="feature-section" id="status">
+        <!-- Features Slider Section -->
+        <section class="features-slider-section" id="features-slider">
             <div class="container">
-                <div class="feature-header-centered">
-                    <div class="feature-title-wrapper">
-                        <div class="feature-icon">🔍</div>
-                        <h2 class="feature-title">Мгновенная <span class="text-gradient">оценка статуса дела</span></h2>
-                    </div>
-                    <p class="feature-description">
-                        Больше не нужно собирать данные по крупицам. <br> Получайте всю информацию о должнике,
-                        арбитражном управляющем и ходе процедуры на одном экране.
-                    </p>
+                <!-- Slider Navigation -->
+                <div class="slider-nav">
+                    <button class="slider-tab active" data-slide="status">
+                        <span class="icon">🔍</span>
+                        <span class="text">Статус дела</span>
+                    </button>
+                    <button class="slider-tab" data-slide="property">
+                        <span class="icon">🏢</span>
+                        <span class="text">Имущество</span>
+                    </button>
+                    <button class="slider-tab" data-slide="auctions">
+                        <span class="icon">🔨</span>
+                        <span class="text">Торги</span>
+                    </button>
+                    <button class="slider-tab" data-slide="creditors">
+                        <span class="icon">👥</span>
+                        <span class="text">Кредиторы</span>
+                    </button>
+                    <button class="slider-tab" data-slide="chronology">
+                        <span class="icon">📅</span>
+                        <span class="text">Хронология</span>
+                    </button>
                 </div>
-                <div class="feature-container">
-                    <div class="feature-content">
-                        <div class="feature-info-grid">
-                            <div class="info-card">
-                                <div class="info-card-icon">👤</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Профиль должника</h4>
-                                    <p class="info-card-text">ИНН, СНИЛС</p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">⚖️</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Процедура</h4>
-                                    <p class="info-card-text">Актуальная стадия банкротства</p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">🏛️</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Суд</h4>
-                                    <p class="info-card-text">Информация о суде</p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">💼</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Арбитражный управляющий</h4>
-                                    <p class="info-card-text">Контакты, ИНН, СРО</p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">📊</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">История дел АУ</h4>
-                                    <p class="info-card-text">Диаграммы активных и завершенных дел</p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">🔢</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Счетчики данных</h4>
-                                    <p class="info-card-text">Имущество, лоты, кредиторы, события</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
-                            style="margin-top: 50px; max-width: 400px;"
-                            onclick="ym(105512416, 'reachGoal', 'open_modal_feature'); return true;">Получить бесплатный
-                            отчет</a>
-                    </div>
-                    <div class="feature-visual">
-                        <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
-                            <img src="img/status_full_screenshot.png" alt="Полная информация о статусе дела"
-                                class="screenshot-img-single">
-                        </div>
-                        <!-- Floating notification -->
-                        <div class="glass-card card-floating card-floating-status">
-                            <span>⚡</span>
-                            <span>Быстрая оценка</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
+                <!-- Slider Viewport -->
+                <div class="slider-viewport">
 
-        <!-- Feature 1.5: Assets (Inventory) -->
-        <section class="feature-section feature-reversed" id="property">
-            <div class="container">
-                <div class="feature-header-centered">
-                    <div class="feature-title-wrapper">
-                        <div class="feature-icon">🏢</div>
-                        <h2 class="feature-title">Полная инвентаризация <span class="text-gradient">имущества</span>
-                        </h2>
-                    </div>
-                    <p class="feature-description">
-                        Получите детальный список всех активов должника. <br> Мы извлекаем данные из инвентаризационных
-                        описей и структурируем их по категориям.
-                    </p>
-                </div>
-                <div class="feature-container">
-                    <div class="feature-content">
-                        <div class="feature-info-grid">
-                            <div class="info-card">
-                                <div class="info-card-icon">🏢</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">На одном экране</h4>
-                                    <p class="info-card-text">Недвижимость, транспорт, оборудование и другие лоты</p>
-                                </div>
+                    <!-- Slide 1: Status -->
+                    <div class="slide active" data-slide="status">
+                        <div class="feature-header-centered">
+                            <div class="feature-title-wrapper">
+                                <div class="feature-icon">🔍</div>
+                                <h2 class="feature-title">Мгновенная <span class="text-gradient">оценка статуса
+                                        дела</span></h2>
                             </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">📋</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Полное описание</h4>
-                                    <p class="info-card-text">Кадастровые номера, VIN, адрес, и другие характеристики
-                                    </p>
+                            <p class="feature-description">
+                                Больше не нужно собирать данные по крупицам. <br> Получайте всю информацию о должнике,
+                                арбитражном управляющем и ходе процедуры на одном экране.
+                            </p>
+                        </div>
+                        <div class="feature-container">
+                            <div class="feature-content">
+                                <div class="feature-info-grid">
+                                    <div class="info-card">
+                                        <div class="info-card-icon">👤</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Профиль должника</h4>
+                                            <p class="info-card-text">ИНН, СНИЛС</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">⚖️</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Процедура</h4>
+                                            <p class="info-card-text">Актуальная стадия банкротства</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">🏛️</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Суд</h4>
+                                            <p class="info-card-text">Информация о суде</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">💼</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Арбитражный управляющий</h4>
+                                            <p class="info-card-text">Контакты, ИНН, СРО</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">📊</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">История дел АУ</h4>
+                                            <p class="info-card-text">Диаграммы активных и завершенных дел</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">🔢</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Счетчики данных</h4>
+                                            <p class="info-card-text">Имущество, лоты, кредиторы, события</p>
+                                        </div>
+                                    </div>
                                 </div>
+                                <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
+                                    style="margin-top: 50px; max-width: 400px;"
+                                    onclick="ym(105512416, 'reachGoal', 'open_modal_feature'); return true;">Получить
+                                    бесплатный
+                                    отчет</a>
                             </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">✅</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Статус</h4>
-                                    <p class="info-card-text">Видно, что уже продано, а что еще доступно</p>
+                            <div class="feature-visual">
+                                <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
+                                    <img src="img/status_full_screenshot.png" alt="Полная информация о статусе дела"
+                                        class="screenshot-img-single">
                                 </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">💰</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Цены реализации</h4>
-                                    <p class="info-card-text">Для каждого реализованного объекта указана цена продажи
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">📊</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Сводные данные</h4>
-                                    <p class="info-card-text">Сумма и количество реализованного имущества</p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">🔗</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Ссылки на торги</h4>
-                                    <p class="info-card-text">Прямые ссылки на объявления и результаты торгов</p>
+                                <!-- Floating notification -->
+                                <div class="glass-card card-floating card-floating-status">
+                                    <span>⚡</span>
+                                    <span>Быстрая оценка</span>
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
-                            style="margin-top: 50px; max-width: 400px;"
-                            onclick="ym(105512416, 'reachGoal', 'open_modal_feature'); return true;">Получить бесплатный
-                            отчет</a>
                     </div>
-                    <div class="feature-visual">
-                        <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
-                            <img src="img/property_full_screenshot.png" alt="Полная инвентаризация имущества должника"
-                                class="screenshot-img-single">
-                        </div>
-                    </div>
-                </div>
-        </section>
 
-        <!-- Feature 2: Auctions & Lots -->
-        <section class="feature-section" id="auctions">
-            <div class="container">
-                <div class="feature-header-centered">
-                    <div class="feature-title-wrapper">
-                        <div class="feature-icon">🔨</div>
-                        <h2 class="feature-title">Умный анализ <span class="text-gradient">торгов и лотов</span></h2>
-                    </div>
-                    <p class="feature-description">
-                        Подсвечиваем самые выгодные этапы публичного предложения. <br>
-                        Визуализируем динамику изменения цены. <br>
-                        Вы увидите реальную выгоду в рублях.
-                    </p>
-                </div>
-                <div class="feature-container">
-                    <div class="feature-content">
-                        <div class="feature-info-grid">
-                            <div class="info-card">
-                                <div class="info-card-icon">🔍</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Фильтр по статусу</h4>
-                                    <p class="info-card-text">Торги объявлены, прием заявок, завершенные, не состоялись
-                                    </p>
-                                </div>
+                    <!-- Slide 2: Property -->
+                    <div class="slide" data-slide="property">
+                        <div class="feature-header-centered">
+                            <div class="feature-title-wrapper">
+                                <div class="feature-icon">🏢</div>
+                                <h2 class="feature-title">Полная инвентаризация <span
+                                        class="text-gradient">имущества</span>
+                                </h2>
                             </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">📋</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Карточки торгов</h4>
-                                    <p class="info-card-text">Дата, тип торгов, количество лотов, общая сумма</p>
+                            <p class="feature-description">
+                                Получите детальный список всех активов должника. <br> Мы извлекаем данные из
+                                инвентаризационных
+                                описей и структурируем их по категориям.
+                            </p>
+                        </div>
+                        <div class="feature-container">
+                            <div class="feature-content">
+                                <div class="feature-info-grid">
+                                    <div class="info-card">
+                                        <div class="info-card-icon">🏢</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">На одном экране</h4>
+                                            <p class="info-card-text">Недвижимость, транспорт, оборудование и другие
+                                                лоты</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">📋</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Полное описание</h4>
+                                            <p class="info-card-text">Кадастровые номера, VIN, адрес, и другие
+                                                характеристики
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">✅</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Статус</h4>
+                                            <p class="info-card-text">Видно, что уже продано, а что еще доступно</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">💰</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Цены реализации</h4>
+                                            <p class="info-card-text">Для каждого реализованного объекта указана цена
+                                                продажи
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">📊</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Сводные данные</h4>
+                                            <p class="info-card-text">Сумма и количество реализованного имущества</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">🔗</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Ссылки на торги</h4>
+                                            <p class="info-card-text">Прямые ссылки на объявления и результаты торгов
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
+                                <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
+                                    style="margin-top: 50px; max-width: 400px;"
+                                    onclick="ym(105512416, 'reachGoal', 'open_modal_feature'); return true;">Получить
+                                    бесплатный
+                                    отчет</a>
                             </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">📈</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Динамика цены</h4>
-                                    <p class="info-card-text">Визуализация падения от начальной до текущей цены</p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">🏆</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Информация о победителе</h4>
-                                    <p class="info-card-text">ИНН и имя покупателя</p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">📝</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Описание лота</h4>
-                                    <p class="info-card-text">Кадастровые номера, VIN, адреса, и другие характеристики
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">🔗</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Ссылки на площадки</h4>
-                                    <p class="info-card-text">Прямые ссылки на Федресурс и торговые площадки</p>
+                            <div class="feature-visual">
+                                <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
+                                    <img src="img/property_full_screenshot.png"
+                                        alt="Полная инвентаризация имущества должника" class="screenshot-img-single">
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
-                            style="margin-top: 50px; max-width: 400px;"
-                            onclick="ym(105512416, 'reachGoal', 'open_modal_feature'); return true;">Получить бесплатный
-                            отчет</a>
                     </div>
-                    <div class="feature-visual">
-                        <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
-                            <img src="img/auctions_full_screenshot.png" alt="Полный список торгов и лотов"
-                                class="screenshot-img-single">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Feature 3: Creditors -->
-        <section class="feature-section feature-reversed" id="creditors">
-            <div class="container">
-                <div class="feature-header-centered">
-                    <div class="feature-title-wrapper">
-                        <div class="feature-icon">👥</div>
-                        <h2 class="feature-title">Полный реестр <span class="text-gradient">кредиторов</span></h2>
-                    </div>
-                    <p class="feature-description">
-                        Понимайте расстановку сил в процедуре банкротства. <br> Мы показываем, кто и сколько требует, в
-                        удобном списке.
-                    </p>
-                </div>
-                <div class="feature-container">
-                    <div class="feature-content">
-                        <div class="feature-info-grid">
-                            <div class="info-card">
-                                <div class="info-card-icon">📊</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Ранжирование</h4>
-                                    <p class="info-card-text">Сортировка по сумме долга</p>
-                                </div>
+                    <!-- Slide 3: Auctions -->
+                    <div class="slide" data-slide="auctions">
+                        <div class="feature-header-centered">
+                            <div class="feature-title-wrapper">
+                                <div class="feature-icon">🔨</div>
+                                <h2 class="feature-title">Умный анализ <span class="text-gradient">торгов и лотов</span>
+                                </h2>
                             </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">📋</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Детализация</h4>
-                                    <p class="info-card-text">Основной долг, штрафы, статус признания</p>
+                            <p class="feature-description">
+                                Подсвечиваем самые выгодные этапы публичного предложения. <br>
+                                Визуализируем динамику изменения цены. <br>
+                                Вы увидите реальную выгоду в рублях.
+                            </p>
+                        </div>
+                        <div class="feature-container">
+                            <div class="feature-content">
+                                <div class="feature-info-grid">
+                                    <div class="info-card">
+                                        <div class="info-card-icon">🔍</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Фильтр по статусу</h4>
+                                            <p class="info-card-text">Торги объявлены, прием заявок, завершенные, не
+                                                состоялись
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">📋</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Карточки торгов</h4>
+                                            <p class="info-card-text">Дата, тип торгов, количество лотов, общая сумма
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">📈</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Динамика цены</h4>
+                                            <p class="info-card-text">Визуализация падения от начальной до текущей цены
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">🏆</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Информация о победителе</h4>
+                                            <p class="info-card-text">ИНН и имя покупателя</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">📝</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Описание лота</h4>
+                                            <p class="info-card-text">Кадастровые номера, VIN, адреса, и другие
+                                                характеристики
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">🔗</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Ссылки на площадки</h4>
+                                            <p class="info-card-text">Прямые ссылки на Федресурс и торговые площадки</p>
+                                        </div>
+                                    </div>
                                 </div>
+                                <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
+                                    style="margin-top: 50px; max-width: 400px;"
+                                    onclick="ym(105512416, 'reachGoal', 'open_modal_feature'); return true;">Получить
+                                    бесплатный
+                                    отчет</a>
                             </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">📄</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Развернутые карточки</h4>
-                                    <p class="info-card-text">Подробные требования с суммами и очередью</p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">📑</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Несколько требований</h4>
-                                    <p class="info-card-text">Один кредитор может иметь несколько требований</p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">💰</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Общая сумма</h4>
-                                    <p class="info-card-text">Видна итоговая сумма задолженности по каждому кредитору
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">🏦</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">ФНС и Банки</h4>
-                                    <p class="info-card-text">Быстро находим ключевых игроков</p>
+                            <div class="feature-visual">
+                                <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
+                                    <img src="img/auctions_full_screenshot.png" alt="Полный список торгов и лотов"
+                                        class="screenshot-img-single">
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
-                            style="margin-top: 50px; max-width: 400px;"
-                            onclick="ym(105512416, 'reachGoal', 'open_modal_feature'); return true;">Получить бесплатный
-                            отчет</a>
                     </div>
-                    <div class="feature-visual">
-                        <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
-                            <img src="img/creditors_full_screenshot.png" alt="Полный реестр кредиторов"
-                                class="screenshot-img-single">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Feature 4: Chronology -->
-        <section class="feature-section" id="chronology">
-            <div class="container">
-                <div class="feature-header-centered">
-                    <div class="feature-title-wrapper">
-                        <div class="feature-icon">📅</div>
-                        <h2 class="feature-title">Хронология <span class="text-gradient">событий</span></h2>
-                    </div>
-                    <p class="feature-description">
-                        Ни одно судебное определение или сообщение АУ не ускользнет от вас. <br>
-                        Вся история дела в единой ленте событий.
-                    </p>
-                </div>
-                <div class="feature-container">
-                    <div class="feature-content">
-                        <div class="feature-info-grid">
-                            <div class="info-card">
-                                <div class="info-card-icon">📜</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Единая лента</h4>
-                                    <p class="info-card-text">Объединяем данные КАД и ЕФРСБ</p>
-                                </div>
+                    <!-- Slide 4: Creditors -->
+                    <div class="slide" data-slide="creditors">
+                        <div class="feature-header-centered">
+                            <div class="feature-title-wrapper">
+                                <div class="feature-icon">👥</div>
+                                <h2 class="feature-title">Полный реестр <span class="text-gradient">кредиторов</span>
+                                </h2>
                             </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">🔍</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Фильтры</h4>
-                                    <p class="info-card-text">Быстро переключайтесь между сообщениями и документами</p>
+                            <p class="feature-description">
+                                Понимайте расстановку сил в процедуре банкротства. <br> Мы показываем, кто и сколько
+                                требует, в
+                                удобном списке.
+                            </p>
+                        </div>
+                        <div class="feature-container">
+                            <div class="feature-content">
+                                <div class="feature-info-grid">
+                                    <div class="info-card">
+                                        <div class="info-card-icon">📊</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Ранжирование</h4>
+                                            <p class="info-card-text">Сортировка по сумме долга</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">📋</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Детализация</h4>
+                                            <p class="info-card-text">Основной долг, штрафы, статус признания</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">📄</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Развернутые карточки</h4>
+                                            <p class="info-card-text">Подробные требования с суммами и очередью</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">📑</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Несколько требований</h4>
+                                            <p class="info-card-text">Один кредитор может иметь несколько требований</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">💰</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Общая сумма</h4>
+                                            <p class="info-card-text">Видна итоговая сумма задолженности по каждому
+                                                кредитору
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">🏦</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">ФНС и Банки</h4>
+                                            <p class="info-card-text">Быстро находим ключевых игроков</p>
+                                        </div>
+                                    </div>
                                 </div>
+                                <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
+                                    style="margin-top: 50px; max-width: 400px;"
+                                    onclick="ym(105512416, 'reachGoal', 'open_modal_feature'); return true;">Получить
+                                    бесплатный
+                                    отчет</a>
                             </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">📝</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Краткое содержание</h4>
-                                    <p class="info-card-text">Экономит время на плнимание документа</p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">🔗</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Контекст</h4>
-                                    <p class="info-card-text">Ссылки на оригиналы документов всегда под рукой</p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">📅</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Типы событий</h4>
-                                    <p class="info-card-text">Объявления торгов, определения суда, сообщения</p>
-                                </div>
-                            </div>
-                            <div class="info-card">
-                                <div class="info-card-icon">🔢</div>
-                                <div class="info-card-content">
-                                    <h4 class="info-card-title">Счетчики</h4>
-                                    <p class="info-card-text">Все события (174), документы (134), сообщения (40)</p>
+                            <div class="feature-visual">
+                                <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
+                                    <img src="img/creditors_full_screenshot.png" alt="Полный реестр кредиторов"
+                                        class="screenshot-img-single">
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
-                            style="margin-top: 50px; max-width: 400px;"
-                            onclick="ym(105512416, 'reachGoal', 'open_modal_feature'); return true;">Получить бесплатный
-                            отчет</a>
                     </div>
-                    <div class="feature-visual">
-                        <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
-                            <img src="img/chronology_full_screenshot.png" alt="Полная хронология событий"
-                                class="screenshot-img-single">
+
+                    <!-- Slide 5: Chronology -->
+                    <div class="slide" data-slide="chronology">
+                        <div class="feature-header-centered">
+                            <div class="feature-title-wrapper">
+                                <div class="feature-icon">📅</div>
+                                <h2 class="feature-title">Хронология <span class="text-gradient">событий</span></h2>
+                            </div>
+                            <p class="feature-description">
+                                Ни одно судебное определение или сообщение АУ не ускользнет от вас. <br>
+                                Вся история дела в единой ленте событий.
+                            </p>
+                        </div>
+                        <div class="feature-container">
+                            <div class="feature-content">
+                                <div class="feature-info-grid">
+                                    <div class="info-card">
+                                        <div class="info-card-icon">📜</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Единая лента</h4>
+                                            <p class="info-card-text">Объединяем данные КАД и ЕФРСБ</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">🔍</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Фильтры</h4>
+                                            <p class="info-card-text">Быстро переключайтесь между сообщениями и
+                                                документами</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">📝</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Краткое содержание</h4>
+                                            <p class="info-card-text">Экономит время на плнимание документа</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">🔗</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Контекст</h4>
+                                            <p class="info-card-text">Ссылки на оригиналы документов всегда под рукой
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">📅</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Типы событий</h4>
+                                            <p class="info-card-text">Объявления торгов, определения суда, сообщения</p>
+                                        </div>
+                                    </div>
+                                    <div class="info-card">
+                                        <div class="info-card-icon">🔢</div>
+                                        <div class="info-card-content">
+                                            <h4 class="info-card-title">Счетчики</h4>
+                                            <p class="info-card-text">Все события (174), документы (134), сообщения (40)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
+                                    style="margin-top: 50px; max-width: 400px;"
+                                    onclick="ym(105512416, 'reachGoal', 'open_modal_feature'); return true;">Получить
+                                    бесплатный
+                                    отчет</a>
+                            </div>
+                            <div class="feature-visual">
+                                <div class="glass-card feature-card-mockup screenshot-container-single screenshot-3d">
+                                    <img src="img/chronology_full_screenshot.png" alt="Полная хронология событий"
+                                        class="screenshot-img-single">
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -1183,6 +1230,9 @@
         <span class="floating-btn-icon">💸</span>
         <span class="floating-btn-text">Посчитать выгоду</span>
     </a>
+
+    <script src="js/slider.js"></script>
+    <script src="js/calculator.js"></script>
 </body>
 
 </html>
