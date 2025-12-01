@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tab.addEventListener('click', () => {
             stopAutoPlay(); // Stop auto-play on user interaction
             setActiveSlide(index);
-            startAutoPlay(); // Restart auto-play
+            // startAutoPlay(); // Do NOT restart auto-play
         });
     });
 
@@ -56,4 +56,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Start auto-play initially
     startAutoPlay();
+
+    // Handle external links (e.g. in header)
+    const navLinks = document.querySelectorAll('[data-slide-target]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Optional: prevent default if you want to handle scrolling manually
+            // e.preventDefault(); 
+
+            const target = link.getAttribute('data-slide-target');
+            // Find index of tab with this data-slide
+            let targetIndex = -1;
+            tabs.forEach((tab, index) => {
+                if (tab.getAttribute('data-slide') === target) {
+                    targetIndex = index;
+                }
+            });
+
+            if (targetIndex !== -1) {
+                stopAutoPlay();
+                setActiveSlide(targetIndex);
+                // startAutoPlay(); // Do NOT restart auto-play
+            }
+        });
+    });
 });

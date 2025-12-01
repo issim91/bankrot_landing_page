@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const AI_BASE_TIME = 7; // base minutes for AI processing
-    
+
     // AI time weights (much smaller than manual - about 1% of manual time)
     const AI_TIME_WEIGHTS = {
         doc: 0.01,      // 0.01 min per document
@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // AI pricing tiers
     const getAICost = (volume) => {
         switch (volume) {
-            case 1: return 890;
-            case 10: return 6900;
-            case 100: return 55000;
-            default: return 890;
+            case 1: return 390;
+            case 10: return 1900;
+            case 100: return 16000;
+            default: return 390;
         }
     };
 
