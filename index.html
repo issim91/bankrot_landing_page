@@ -225,7 +225,8 @@
                         <div class="feature-header-centered">
 
                             <p class="feature-description">
-                                Больше не нужно собирать данные по крупицам. <br> Получайте всю информацию о должнике и ходе процедуры на одном экране.
+                                Больше не нужно собирать данные по крупицам. <br> Получайте всю информацию о должнике и
+                                ходе процедуры на одном экране.
                             </p>
                         </div>
                         <div class="feature-container">
@@ -932,8 +933,22 @@
 
         // Open modal when clicking on report card
         reportCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                // Prevent opening if clicking on the button (it has its own handler)
+                if (e.target.closest('.btn')) {
+                    return;
+                }
+                const reportPath = card.getAttribute('data-report');
+                reportFrame.src = reportPath;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                // Track card click
+                ym(105512416, 'reachGoal', 'view_report_card');
+            });
+
             const button = card.querySelector('.btn');
-            button.addEventListener('click', () => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent card click from firing
                 const reportPath = card.getAttribute('data-report');
                 reportFrame.src = reportPath;
                 modal.classList.add('active');
@@ -1137,7 +1152,7 @@
                             <button type="button" class="btn btn-primary" style="margin-top: 20px;" onclick="location.reload()">Закрыть</button>
                         </div>
                     `;
-                    
+
                     // Send goal to Yandex Metrica when success screen is shown
                     ym(105512416, 'reachGoal', 'submit_application');
                 } else {
