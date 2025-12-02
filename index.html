@@ -1144,9 +1144,6 @@
                 });
 
                 if (response.ok) {
-                    // Send goal to Yandex Metrica
-                    ym(105512416, 'reachGoal', 'submit_application');
-
                     // Show success state
                     const methodNames = {
                         'email': 'Email',
@@ -1159,10 +1156,13 @@
                         <div style="text-align: center; padding: 40px 0;">
                             <div style="font-size: 3rem; margin-bottom: 20px;">✅</div>
                             <h3 style="margin-bottom: 10px;">Заявка принята!</h3>
-                            <p style="color: var(--text-muted);">Мы уже начали анализ дела ${caseNumber}.<br>Отчет придет на ${methodName}.</p>
+                            <p style="color: var(--text-muted);">Мы уже начали анализ дела ${caseNumber || 'без указания номера'}.<br>Отчет придет на ${methodName}.</p>
                             <button type="button" class="btn btn-primary" style="margin-top: 20px;" onclick="location.reload()">Закрыть</button>
                         </div>
                     `;
+                    
+                    // Send goal to Yandex Metrica when success screen is shown
+                    ym(105512416, 'reachGoal', 'submit_application');
                 } else {
                     throw new Error('Ошибка отправки');
                 }
