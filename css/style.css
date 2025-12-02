@@ -415,7 +415,7 @@ ul {
 /* Hero Visual & Dashboard Card */
 .hero-visual {
     position: relative;
-    height: 500px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1923,8 +1923,8 @@ ul {
     }
 
     .hero {
-        padding-top: calc(var(--header-height) + 40px);
-        padding-bottom: 40px;
+        padding-top: calc(var(--header-height) + 30px);
+        padding-bottom: 30px;
     }
 
     .hero-container,
@@ -2420,8 +2420,8 @@ ul {
         }
 
         .hero {
-            padding-top: calc(var(--header-height) + 60px);
-            padding-bottom: 30px;
+            padding-top: calc(var(--header-height) + 50px);
+            padding-bottom: 10px;
         }
 
         /* Hero visual small mobile */
@@ -2576,7 +2576,7 @@ ul {
     .hero-visual {
         height: auto;
         min-height: auto;
-        margin-top: 40px;
+        margin-top: -50px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -2757,12 +2757,12 @@ ul {
 
 /* Savings Section */
 .savings-section {
-    padding: 20px 0 80px 0;
+    padding: 0 0 80px 0;
     position: relative;
 }
 
 .savings-section .feature-header-centered {
-    margin-top: 20px;
+    margin-top: -10px;
     margin-bottom: 40px;
 }
 
@@ -3387,6 +3387,14 @@ ul {
 }
 
 @media (max-width: 768px) {
+    .savings-section {
+        padding: 0 0 60px 0 !important;
+    }
+
+    .savings-section .feature-header-centered {
+        margin: -10px auto 20px auto !important;
+    }
+
     .savings-content {
         flex-direction: column;
         gap: 20px;
