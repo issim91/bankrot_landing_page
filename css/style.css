@@ -1066,17 +1066,22 @@ ul {
 .screenshot-container-single {
     padding: 24px !important;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     border-color: rgba(99, 102, 241, 0.5);
     box-shadow: 0 0 30px rgba(99, 102, 241, 0.25);
     background: rgba(35, 35, 50, 0.6);
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .screenshot-img-single {
     width: 100%;
     max-width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow:
@@ -2332,6 +2337,7 @@ ul {
 
         .info-card {
             padding: 16px;
+            align-items: center;
         }
 
         .info-card-icon {
@@ -2340,12 +2346,16 @@ ul {
             font-size: 1.5rem;
         }
 
+        .info-card-content {
+            justify-content: center;
+        }
+
         .info-card-title {
             font-size: 0.95rem;
         }
 
         .info-card-text {
-            font-size: 0.8rem;
+            display: none;
         }
 
         .audience-section {
@@ -3556,6 +3566,11 @@ ul {
         flex-direction: column;
         gap: 8px;
     }
+
+    .screenshot-container-single {
+        height: auto;
+        min-height: 300px;
+    }
 }
 
 /* Calculator Controls */
@@ -3741,7 +3756,7 @@ ul {
     display: flex;
     justify-content: center;
     gap: 16px;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     flex-wrap: wrap;
 }
 
@@ -3780,7 +3795,7 @@ ul {
 
 .slider-viewport {
     position: relative;
-    min-height: 600px;
+    min-height: 500px;
     padding-bottom: 0;
     margin-bottom: 0;
 }
