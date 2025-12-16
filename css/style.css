@@ -247,6 +247,12 @@ ul {
     align-items: center;
 }
 
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .badge {
     display: inline-flex;
     align-items: center;
@@ -421,10 +427,15 @@ ul {
 /* Hero Visual & Dashboard Card */
 .hero-visual {
     position: relative;
-    height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    align-self: stretch;
+}
+
+.hero-visual .card-dashboard {
+    margin: auto 0;
 }
 
 .glass-card {
@@ -1423,10 +1434,11 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    pointer-events: auto;
 }
 
 .cta-title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
     margin-bottom: 24px;
@@ -1491,6 +1503,138 @@ ul {
 .cta-actions .btn:hover {
     box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
     transform: translateY(-2px);
+}
+
+/* CTA Form Styles */
+.cta-form-wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 50;
+    pointer-events: auto;
+}
+
+.cta-contact-selector {
+    margin-bottom: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4px;
+    border-radius: 12px;
+    position: relative;
+    z-index: 100;
+    touch-action: manipulation;
+    pointer-events: auto;
+}
+
+.cta-contact-selector .contact-method-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    position: relative;
+    z-index: 101;
+    pointer-events: auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.cta-contact-selector .contact-method-btn:hover {
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.cta-contact-selector .contact-method-btn.active {
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+    font-weight: 600;
+}
+
+.cta-form-row {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+}
+
+.cta-phone-input,
+.cta-contact-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: var(--text-main);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.cta-phone-input:focus,
+.cta-contact-input:focus {
+    outline: none;
+    border-color: rgba(99, 102, 241, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.cta-phone-input::placeholder,
+.cta-contact-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.cta-submit-btn {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4),
+        0 0 40px rgba(99, 102, 241, 0.2);
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.6),
+        0 0 50px rgba(99, 102, 241, 0.3);
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+}
+
+@media (max-width: 768px) {
+    .cta-form-row {
+        flex-direction: column;
+    }
+
+    .cta-submit-btn {
+        width: 100%;
+    }
+
+    .cta-contact-selector {
+        margin-bottom: 12px;
+    }
+
+    .cta-contact-selector .contact-method-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
 }
 
 /* How It Works Section */
@@ -2690,6 +2834,102 @@ ul {
         0 0 0 1px rgba(99, 102, 241, 0.2),
         0 20px 60px rgba(0, 0, 0, 0.8),
         0 0 50px rgba(99, 102, 241, 0.25);
+}
+
+/* Thank You Modal Styles */
+#thankYouModal .modal-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.thank-you-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 48px 32px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.thank-you-icon {
+    margin: 0 auto 32px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+}
+
+.thank-you-icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.3));
+}
+
+.thank-you-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-main);
+    margin: 0 auto 16px auto;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+}
+
+.thank-you-message {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto 32px auto;
+    text-align: center;
+    width: 100%;
+}
+
+.thank-you-btn {
+    padding: 14px 32px;
+    font-size: 1rem;
+    min-width: 140px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .thank-you-content {
+        padding: 40px 24px;
+    }
+
+    .thank-you-icon {
+        margin: 0 auto 24px auto;
+        width: 56px;
+        height: 56px;
+    }
+
+    .thank-you-icon svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .thank-you-title {
+        font-size: 1.5rem;
+        margin: 0 auto 12px auto;
+    }
+
+    .thank-you-message {
+        font-size: 1rem;
+        margin: 0 auto 24px auto;
+    }
+
+    .thank-you-btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
 }
 
 /* Contact Method Selector */

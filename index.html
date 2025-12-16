@@ -73,13 +73,6 @@
                 <span class="logo-icon">B</span>
                 <span class="logo-text">Bankrot<span class="highlight">Analytics</span></span>
             </a>
-            <nav class="nav">
-                <a href="#features-slider" class="nav-link" data-slide-target="status">Статус дела</a>
-                <a href="#features-slider" class="nav-link" data-slide-target="property">Имущество</a>
-                <a href="#features-slider" class="nav-link" data-slide-target="auctions">Торги</a>
-                <a href="#features-slider" class="nav-link" data-slide-target="creditors">Кредиторы</a>
-                <a href="#features-slider" class="nav-link" data-slide-target="chronology">Хронология</a>
-            </nav>
         </div>
     </header>
 
@@ -87,17 +80,11 @@
         <section class="hero" id="start">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <div class="badge">
-                        <span class="badge-dot"></span>
-                        ИИ-аналитика торгов 2.0
-                    </div>
                     <h1 class="hero-title">
-                        Аналитика <span class="text-gradient">торгов по банкротству за 10 минут</span>
+                        Все данные из <span class="text-gradient">ЕФРСБ и КАД в одном месте</span>
                     </h1>
                     <p class="hero-description">
-                        Автоматизированный анализ данных ЕФРСБ и КАД.
-                        Превращаем тысячи страниц судебных документов и сообщений с Федресурса в понятный аналитический
-                        отчет.
+                        Больше не нужно тратить время и открывать сотни вкладок торгов, лотов и документов. <br>
                     </p>
                 </div>
 
@@ -196,7 +183,7 @@
             <div class="container">
                 <div class="feature-header-centered">
                     <div class="feature-title-wrapper">
-                        <h2 class="feature-title">Кому мы <span class="text-gradient">помогаем принимать решения</span>
+                        <h2 class="feature-title"><span class="text-gradient">Кому это необходимо</span>
                         </h2>
                     </div>
                 </div>
@@ -633,219 +620,29 @@
                     <div class="cta-content">
                         <h2 class="cta-title">Начните <span class="text-gradient">работать эффективнее</span></h2>
                         <p class="cta-description">
-                            Пока другие читают сотни страниц документов, вы уже принимаете решение о покупке. <br>
-                            Bankrot Analytics — ваше секретное оружие на торгах.
+                            Изучите первое дело за наш счет
                         </p>
 
-                        <div class="cta-actions">
-                            <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
-                                onclick="ym(105512416, 'reachGoal', 'open_modal_feature'); return true;">
-                                <span class="btn-text">Получить бесплатный отчет</span>
-                            </a>
-                            <p class="cta-note">💳 Карта не требуется <br> ⚡️ Первый отчет бесплатно</p>
+                        <div class="cta-form-wrapper">
+                            <div class="contact-method-selector cta-contact-selector">
+                                <button type="button" class="contact-method-btn active" data-method="whatsapp" onclick="if(window.switchContactMethod) window.switchContactMethod('whatsapp'); return false;">WhatsApp</button>
+                                <button type="button" class="contact-method-btn" data-method="phone" onclick="if(window.switchContactMethod) window.switchContactMethod('phone'); return false;">Телефон</button>
+                                <button type="button" class="contact-method-btn" data-method="telegram" onclick="if(window.switchContactMethod) window.switchContactMethod('telegram'); return false;">Telegram</button>
+                            </div>
+                            <div class="cta-form-row">
+                                <input type="tel" id="ctaWhatsapp" class="form-input cta-contact-input" placeholder="+7 (999) 999-99-99" required>
+                                <input type="tel" id="ctaPhone" class="form-input cta-contact-input" placeholder="+7 (999) 999-99-99" style="display: none;">
+                                <input type="text" id="ctaTelegram" class="form-input cta-contact-input" placeholder="@username" style="display: none;">
+                                <button type="button" class="btn btn-primary btn-lg cta-submit-btn">
+                                    <span class="btn-text">Попробовать бесплатно</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Decorative elements -->
                     <div class="cta-decoration decoration-1"></div>
                     <div class="cta-decoration decoration-2"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- How It Works Section -->
-        <section class="how-it-works-section">
-            <div class="container">
-                <div class="feature-header-centered">
-                    <div class="feature-title-wrapper">
-                        <div class="feature-icon">⚙️</div>
-                        <h2 class="feature-title">Как <span class="text-gradient">создается отчет</span></h2>
-                    </div>
-                    <p class="feature-description">
-                        Автоматизированный процесс сбора и анализа данных за несколько минут
-                    </p>
-                </div>
-
-                <div class="steps-container">
-                    <div class="step-item">
-                        <div class="step-number">01</div>
-                        <div class="step-content">
-                            <h3 class="step-title">Сбор данных</h3>
-                            <p class="step-description">Автоматический сбор всей информации с ЕФРСБ и КАД</p>
-                        </div>
-                    </div>
-
-                    <div class="step-item">
-                        <span class="step-ai-icon" data-tooltip="Автоматизировано с помощью ИИ">🤖</span>
-                        <div class="step-number">02</div>
-                        <div class="step-content">
-                            <h3 class="step-title">Обработка информации</h3>
-                            <p class="step-description">Структурирование и очистка полученной информации</p>
-                        </div>
-                    </div>
-
-                    <div class="step-item">
-                        <span class="step-ai-icon" data-tooltip="Автоматизировано с помощью ИИ">🤖</span>
-                        <div class="step-number">03</div>
-                        <div class="step-content">
-                            <h3 class="step-title">Анализ торгов</h3>
-                            <p class="step-description">Оценка лотов и выявление выгодных предложений</p>
-                        </div>
-                    </div>
-
-                    <div class="step-item">
-                        <span class="step-ai-icon" data-tooltip="Автоматизировано с помощью ИИ">🤖</span>
-                        <div class="step-number">04</div>
-                        <div class="step-content">
-                            <h3 class="step-title">Поиск имущества</h3>
-                            <p class="step-description">Создание детального перечня имущества должника</p>
-                        </div>
-                    </div>
-
-                    <div class="step-item">
-                        <span class="step-ai-icon" data-tooltip="Автоматизировано с помощью ИИ">🤖</span>
-                        <div class="step-number">05</div>
-                        <div class="step-content">
-                            <h3 class="step-title">Анализ документов</h3>
-                            <p class="step-description">Интеллектуальная обработка судебных документов</p>
-                        </div>
-                    </div>
-
-
-                    <div class="step-item">
-                        <span class="step-ai-icon" data-tooltip="Автоматизировано с помощью ИИ">🤖</span>
-                        <div class="step-number">06</div>
-                        <div class="step-content">
-                            <h3 class="step-title">Реестр кредиторов</h3>
-                            <p class="step-description">Формирование полного списка требований кредиторов</p>
-                        </div>
-                    </div>
-
-                    <div class="step-item">
-                        <div class="step-number">07</div>
-                        <div class="step-content">
-                            <h3 class="step-title">Хронология дела</h3>
-                            <p class="step-description">Формирование временной шкалы всех событий</p>
-                        </div>
-                    </div>
-
-                    <div class="step-item">
-                        <div class="step-number">08</div>
-                        <div class="step-content">
-                            <h3 class="step-title">Финальный отчет</h3>
-                            <p class="step-description">Генерация готового аналитического документа</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Savings Section -->
-        <section class="savings-section" id="savings">
-            <div class="container">
-                <div class="feature-header-centered">
-                    <div class="feature-title-wrapper">
-                        <div class="feature-icon">💸</div>
-                        <h2 class="feature-title">Калькулятор <span class="text-gradient">выгоды</span></h2>
-                    </div>
-                    <p class="feature-description">
-                        Почему платить за подписку выгоднее, чем содержать штат аналитиков
-                    </p>
-                </div>
-
-                <!-- Mobile Volume Toggle (visible only on mobile) -->
-                <div class="volume-toggle-mobile">
-                    <div class="volume-toggle">
-                        <button class="volume-btn active" data-volume="1">1 дело</button>
-                        <button class="volume-btn" data-volume="10">10 дел</button>
-                        <button class="volume-btn" data-volume="100">100 дел</button>
-                    </div>
-                </div>
-
-                <div class="calculator-wrapper-horizontal">
-                    <!-- Left Side: Controls -->
-                    <div class="calculator-controls-panel glass-card">
-                        <!-- Volume Toggle -->
-                        <div class="volume-toggle-controls">
-                            <div class="volume-toggle">
-                                <button class="volume-btn active" data-volume="1">1 дело</button>
-                                <button class="volume-btn" data-volume="10">10 дел</button>
-                                <button class="volume-btn" data-volume="100">100 дел</button>
-                            </div>
-                        </div>
-
-                        <div class="calculator-controls-vertical">
-                            <div class="control-group">
-                                <div class="control-header">
-                                    <label>Количество Торгов</label>
-                                    <span id="val-auctions">12</span>
-                                </div>
-                                <input type="range" id="range-auctions" min="0" max="50" value="12" class="slider">
-                            </div>
-                            <div class="control-group">
-                                <div class="control-header">
-                                    <label>Сообщения ЕФРСБ</label>
-                                    <span id="val-msgs">64</span>
-                                </div>
-                                <input type="range" id="range-msgs" min="0" max="200" value="64" class="slider">
-                            </div>
-                            <div class="control-group">
-                                <div class="control-header">
-                                    <label>Документы КАД</label>
-                                    <span id="val-docs">101</span>
-                                </div>
-                                <input type="range" id="range-docs" min="0" max="500" value="101" class="slider">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Side: Comparison -->
-                    <div class="comparison-wrapper">
-                        <!-- Unified Comparison Table -->
-                        <div class="comparison-table glass-card">
-                            <div class="comparison-row comparison-header">
-                                <div class="comparison-cell"></div>
-                                <div class="comparison-cell">
-                                    <div class="comparison-header-title bad">Ручной анализ</div>
-                                </div>
-                                <div class="comparison-cell">
-                                    <div class="comparison-header-title good">Bankrot Analytics</div>
-                                </div>
-                                <div class="comparison-cell">
-                                    <div class="comparison-header-title savings">Экономия</div>
-                                </div>
-                            </div>
-
-                            <div class="comparison-row">
-                                <div class="comparison-cell metric-name">Время</div>
-                                <div class="comparison-cell">
-                                    <div class="metric-value bad" id="manual-time-display">3 часа</div>
-                                </div>
-                                <div class="comparison-cell">
-                                    <div class="metric-value good" id="ai-time-display">7 минут</div>
-                                </div>
-                                <div class="comparison-cell">
-                                    <div class="metric-value savings" id="time-savings-display">+ 2 ч 52 мин</div>
-                                </div>
-                            </div>
-
-                            <div class="comparison-row">
-                                <div class="comparison-cell metric-name">Стоимость</div>
-                                <div class="comparison-cell">
-                                    <div class="metric-value bad" id="manual-cost-display">2 000 ₽</div>
-                                    <div class="metric-sub">при ЗП аналитика 120 000 ₽</div>
-                                </div>
-                                <div class="comparison-cell">
-                                    <div class="metric-value good" id="ai-cost-display">~890 ₽</div>
-                                    <div class="metric-sub">в рамках подписки</div>
-                                </div>
-                                <div class="comparison-cell">
-                                    <div class="metric-value savings" id="savings-cost-display">1 348 ₽</div>
-                                    <div class="metric-sub" id="volume-label">на 1 дело</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -869,9 +666,7 @@
                             <span>90 сообщений</span>
                             <span>152 документа</span>
                         </div>
-                        <button class="btn btn-outline"
-                            onclick="ym(105512416, 'reachGoal', 'view_report_card'); return true;">Посмотреть
-                            отчет</button>
+                        <button class="btn btn-outline">Посмотреть отчет</button>
                     </div>
                     <div class="report-card" data-report="reports/case_32-545772023.html">
                         <h3 class="report-title">Дело №А32-54577/2023</h3>
@@ -882,9 +677,7 @@
                             <span>40 сообщений</span>
                             <span>134 документа</span>
                         </div>
-                        <button class="btn btn-outline"
-                            onclick="ym(105512416, 'reachGoal', 'view_report_card'); return true;">Посмотреть
-                            отчет</button>
+                        <button class="btn btn-outline">Посмотреть отчет</button>
                     </div>
                     <div class="report-card" data-report="reports/case_55-365452022.html">
                         <h3 class="report-title">Дело №А55-36545/2022</h3>
@@ -895,23 +688,8 @@
                             <span>15 сообщений</span>
                             <span>45 документов</span>
                         </div>
-                        <button class="btn btn-outline"
-                            onclick="ym(105512416, 'reachGoal', 'view_report_card'); return true;">Посмотреть
-                            отчет</button>
+                        <button class="btn btn-outline">Посмотреть отчет</button>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-card">
-                    <h2 class="cta-title">Готовы находить лучшие лоты?</h2>
-                    <p class="cta-description">Получите доступ к профессиональной аналитике банкротств уже сегодня.</p>
-                    <a href="#" class="btn btn-primary btn-lg js-open-analysis-modal"
-                        onclick="ym(105512416, 'reachGoal', 'click_register_cta'); return true;">Начать
-                        бесплатно</a>
                 </div>
             </div>
         </section>
@@ -930,334 +708,34 @@
         </div>
     </div>
 
-    <!-- Analysis Request Modal -->
-    <div id="analysisModal" class="modal">
+    <!-- Thank You Modal -->
+    <div id="thankYouModal" class="modal">
         <div class="modal-content analysis-modal-content">
             <div class="modal-header modal-header-centered">
-                <h3 class="modal-title">Заявка на бесплатный отчет</h3>
-                <button class="modal-close" id="closeAnalysisModal">&times;</button>
+                <h3 class="modal-title">Спасибо!</h3>
+                <button class="modal-close" id="closeThankYouModal">&times;</button>
             </div>
             <div class="modal-body">
-                <form class="analysis-form" id="analysisForm">
-                    <div class="form-group">
-                        <label for="caseNumber" class="form-label">Номер дела</label>
-                        <input type="text" id="caseNumber" name="caseNumber" class="form-input"
-                            placeholder="Например: А40-123456/2023">
+                <div class="thank-you-content">
+                    <div class="thank-you-icon">
+                        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="64" height="64" rx="16" fill="#10b981"/>
+                            <path d="M20 32L28 40L44 24" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label">Куда отправить отчет</label>
-                        <div class="contact-method-selector">
-                            <button type="button" class="contact-method-btn active"
-                                data-method="telegram">Telegram</button>
-                            <button type="button" class="contact-method-btn" data-method="whatsapp">WhatsApp</button>
-                            <button type="button" class="contact-method-btn" data-method="email">Email</button>
-                        </div>
-                        <div class="contact-input-wrapper">
-                            <input type="text" id="contactTelegram" name="contact_telegram"
-                                class="form-input contact-input active" placeholder="@username" required>
-                            <input type="tel" id="contactWhatsapp" name="contact_whatsapp"
-                                class="form-input contact-input" placeholder="+7 999-999-99-99">
-                            <input type="email" id="contactEmail" name="contact_email" class="form-input contact-input"
-                                placeholder="name@example.com">
-                        </div>
-                        <!-- Hidden input to store the actual selected contact value for submission -->
-                        <input type="hidden" id="selectedContact" name="contact">
-                        <input type="hidden" id="selectedMethod" name="method" value="telegram">
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-lg form-submit-btn">Заказать отчет</button>
-                </form>
+                    <h3 class="thank-you-title">Заявка принята!</h3>
+                    <p class="thank-you-message">
+                        Мы получили вашу заявку и свяжемся с вами в ближайшее время.
+                    </p>
+                    <button type="button" class="btn btn-primary thank-you-btn" id="closeThankYouBtn">Закрыть</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="js/calculator.js"></script>
-
-    <script>
-        // Modal functionality
-        const modal = document.getElementById('reportModal');
-        const reportFrame = document.getElementById('reportFrame');
-        const closeModal = document.getElementById('closeModal');
-        const reportCards = document.querySelectorAll('.report-card');
-
-        // Open modal when clicking on report card
-        reportCards.forEach(card => {
-            card.addEventListener('click', (e) => {
-                // Prevent opening if clicking on the button (it has its own handler)
-                if (e.target.closest('.btn')) {
-                    return;
-                }
-                const reportPath = card.getAttribute('data-report');
-                reportFrame.src = reportPath;
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-                // Track card click
-                ym(105512416, 'reachGoal', 'view_report_card');
-            });
-
-            const button = card.querySelector('.btn');
-            button.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevent card click from firing
-                const reportPath = card.getAttribute('data-report');
-                reportFrame.src = reportPath;
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        // Close modal
-        closeModal.addEventListener('click', () => {
-            modal.classList.remove('active');
-            reportFrame.src = '';
-            document.body.style.overflow = '';
-        });
-
-        // Close modal when clicking outside
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-                reportFrame.src = '';
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                if (modal.classList.contains('active')) {
-                    modal.classList.remove('active');
-                    reportFrame.src = '';
-                    document.body.style.overflow = '';
-                }
-                if (analysisModal.classList.contains('active')) {
-                    analysisModal.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            }
-        });
-
-        // Analysis Modal functionality
-        const analysisModal = document.getElementById('analysisModal');
-        const closeAnalysisModal = document.getElementById('closeAnalysisModal');
-        const analysisBtns = document.querySelectorAll('.js-open-analysis-modal');
-        const analysisForm = document.getElementById('analysisForm');
-
-        // Open analysis modal
-        analysisBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                analysisModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        // Close analysis modal
-        closeAnalysisModal.addEventListener('click', () => {
-            analysisModal.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
-        // Close analysis modal when clicking outside
-        analysisModal.addEventListener('click', (e) => {
-            if (e.target === analysisModal) {
-                analysisModal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Contact Method Switching
-        const methodBtns = document.querySelectorAll('.contact-method-btn');
-        const contactInputs = {
-            'email': document.getElementById('contactEmail'),
-            'telegram': document.getElementById('contactTelegram'),
-            'whatsapp': document.getElementById('contactWhatsapp')
-        };
-        const selectedMethodInput = document.getElementById('selectedMethod');
-
-        methodBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Update buttons
-                methodBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                // Update inputs
-                const method = btn.getAttribute('data-method');
-                selectedMethodInput.value = method;
-
-                Object.values(contactInputs).forEach(input => {
-                    input.classList.remove('active');
-                    input.required = false;
-                });
-
-                const activeInput = contactInputs[method];
-                activeInput.classList.add('active');
-                activeInput.required = true;
-                activeInput.focus();
-            });
-        });
-
-        // Phone Mask Logic
-        const phoneInput = document.getElementById('contactWhatsapp');
-
-        const formatPhone = (value) => {
-            if (!value) return value;
-            const phoneNumber = value.replace(/\D/g, '');
-
-            // We always start with +7
-            if (phoneNumber.length < 1) return '+7';
-
-            let numbers = phoneNumber;
-            if (phoneNumber.startsWith('7')) {
-                numbers = phoneNumber.substring(1);
-            }
-
-            // Limit max length
-            numbers = numbers.substring(0, 10);
-
-            let formatted = '+7';
-            if (numbers.length > 0) {
-                formatted += ' ' + numbers.substring(0, 3);
-            }
-            if (numbers.length >= 4) {
-                formatted += '-' + numbers.substring(3, 6);
-            }
-            if (numbers.length >= 7) {
-                formatted += '-' + numbers.substring(6, 8);
-            }
-            if (numbers.length >= 9) {
-                formatted += '-' + numbers.substring(8, 10);
-            }
-
-            return formatted;
-        };
-
-        phoneInput.addEventListener('input', (e) => {
-            const formatted = formatPhone(e.target.value);
-            e.target.value = formatted;
-        });
-
-        // Focus handler to ensure +7 is there
-        phoneInput.addEventListener('focus', (e) => {
-            if (!e.target.value) {
-                e.target.value = '+7 ';
-            }
-        });
-
-        // Handle form submission
-        analysisForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const submitBtn = analysisForm.querySelector('.form-submit-btn');
-            const originalBtnText = submitBtn.textContent;
-
-            // Show loading state
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Отправка...';
-
-            const caseNumber = document.getElementById('caseNumber').value;
-            const method = selectedMethodInput.value;
-            const contactValue = contactInputs[method].value;
-
-            // Data to send
-            const formData = {
-                caseNumber: caseNumber,
-                contactMethod: method,
-                contactValue: contactValue,
-                _subject: `Новая заявка на анализ: ${caseNumber}`
-            };
-
-            // Если выбран способ связи Email, добавляем поле email специально для Formspree
-            // Это повышает доверие антиспам-фильтров и позволяет отвечать на письмо кнопкой "Ответить"
-            if (method === 'email') {
-                formData.email = contactValue;
-            }
-
-            try {
-                const FORMSPREE_ENDPOINT = 'https://formspree.io/f/manzzbpp';
-
-                const response = await fetch(FORMSPREE_ENDPOINT, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
-
-                if (response.ok) {
-                    // Show success state
-                    const methodNames = {
-                        'email': 'Email',
-                        'telegram': 'Telegram',
-                        'whatsapp': 'WhatsApp'
-                    };
-                    const methodName = methodNames[method] || method;
-
-                    analysisForm.innerHTML = `
-                        <div style="text-align: center; padding: 40px 0;">
-                            <div style="font-size: 3rem; margin-bottom: 20px;">✅</div>
-                            <h3 style="margin-bottom: 10px;">Заявка принята!</h3>
-                            <p style="color: var(--text-muted);">Мы уже начали анализ дела ${caseNumber || 'без указания номера'}.<br>Отчет придет на ${methodName}.</p>
-                            <button type="button" class="btn btn-primary" style="margin-top: 20px;" onclick="location.reload()">Закрыть</button>
-                        </div>
-                    `;
-
-                    // Send goal to Yandex Metrica when success screen is shown
-                    ym(105512416, 'reachGoal', 'submit_application');
-                } else {
-                    throw new Error('Ошибка отправки');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже.');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalBtnText;
-            }
-        });
-
-        // Floating Calculator Button
-        const floatingBtn = document.getElementById('floatingCalculatorBtn');
-        const savingsSection = document.getElementById('savings');
-
-        if (floatingBtn && savingsSection) {
-            // Smooth scroll to savings section
-            floatingBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                savingsSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-
-            // Hide/show button based on scroll position
-            const handleScroll = () => {
-                const rect = savingsSection.getBoundingClientRect();
-                const isInView = rect.top <= 100 && rect.bottom >= window.innerHeight;
-
-                if (isInView) {
-                    floatingBtn.style.opacity = '0';
-                    floatingBtn.style.pointerEvents = 'none';
-                } else {
-                    floatingBtn.style.opacity = '1';
-                    floatingBtn.style.pointerEvents = 'auto';
-                }
-            };
-
-            window.addEventListener('scroll', handleScroll);
-            handleScroll(); // Initial check
-        }
-
-    </script>
-
-    <!-- Floating Calculator Button -->
-    <a href="#savings" class="floating-calculator-btn" id="floatingCalculatorBtn"
-        onclick="ym(105512416, 'reachGoal', 'click_floating_calculator'); return true;">
-        <span class="floating-btn-icon">💸</span>
-        <span class="floating-btn-text">Посчитать выгоду</span>
-    </a>
-
-    <script src="js/slider.js"></script>
-    <script src="js/calculator.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/slider.js" defer></script>
+    <script src="js/calculator.js" defer></script>
 </body>
 
 </html>
